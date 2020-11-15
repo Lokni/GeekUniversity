@@ -1,0 +1,126 @@
+[Adminchik]: hello
+[Adminchik]: Annybody os here?
+[User]: O hello Adminchik!
+[Adminchik]: Hola User!
+[Adminchik]: 1
+[Adminchik]: 2
+[Adminchik]: 3
+[Adminchik]: 4
+[Adminchik]: 5
+[Adminchik]: 6
+[Adminchik]: 7
+[Adminchik]: 8
+[Adminchik]: 9
+[Adminchik]: 0
+[User]: 1
+[User]: 2
+[User]: 3
+[User]: 4
+[User]: 5
+[User]: 6
+[User]: 7
+[User]: 8
+[User]: 9
+[User]: 0
+[Adminchik]: 1
+[Adminchik]: 2
+[Adminchik]: 3
+[Adminchik]: 4
+[Adminchik]: 5
+[Adminchik]: 6
+[Adminchik]: 7
+[Adminchik]: 8
+[Adminchik]: 9
+[Adminchik]: 0
+[User]: 1
+[User]: 2
+[User]: 3
+[User]: 4
+[User]: 5
+[User]: 6
+[User]: 7
+[User]: 8
+[User]: 9
+[User]: 0
+[Adminchik]: 50
+[Adminchik]: 51
+[Adminchik]: 52
+[Adminchik]: 53
+[Adminchik]: 54
+[Adminchik]: 55
+[Adminchik]: 56
+[Adminchik]: 57
+[Adminchik]: 58
+[Adminchik]: 59
+[Adminchik]: 60
+[User]: 61
+[User]: 62
+[User]: 63
+[User]: 64
+[User]: 65
+[User]: 66
+[User]: 67
+[User]: 68
+[User]: 69
+[User]: 70
+[Adminchik]: 71
+[Adminchik]: 72
+[Adminchik]: 73
+[Adminchik]: 74
+[Adminchik]: 75
+[Adminchik]: 76
+[Adminchik]: 77
+[Adminchik]: 78
+[Adminchik]: 79
+[Adminchik]: 80
+[User]: 81
+[User]: 82
+[User]: 83
+[User]: 84
+[User]: 85
+[User]: 86
+[User]: 87
+[User]: 89
+[User]: 90
+[Adminchik]: 91
+[Adminchik]: 92
+[Adminchik]: 93]94
+[Adminchik]: 95
+[Adminchik]: 96
+[Adminchik]: 97
+[Adminchik]: 98
+[Adminchik]: 99
+[Adminchik]: 100
+[User]: 101
+[User]: 102
+[User]: 103
+[User]: 104
+[User]: 105
+[User]: 106
+[User]: 107
+[User]: 108
+[User]: 109
+[User]: 110
+[Adminchik]: So, we have more than 100 lines
+[User]: let's chek history)
+[Adminchik]: History is working good))
+[User]: asdf
+[Adminchik]: dfg
+[User]: sf
+[Adminchik]: fj
+[Adminchik]: its Very strange.....
+[Adminchik]: sdf
+[Adminchik]: Bug problem solved!!
+[User]: Yeheee!! 
+Private message from User: Login thread is working
+Private message to user User: yep!
+[Adminchik]: BD is working?
+[Admin_Helper]: hello
+[Adminchik]: remade history method like was showed in lesson)
+[Admin_Helper]: good, main its all working correctly)
+[Adminchik]: dfsg
+[Admin_Helper]: sdfg
+[User_No.2]: tre
+[user3]: jty
+[Adminchik]: hello
+[Adminchik]: hello

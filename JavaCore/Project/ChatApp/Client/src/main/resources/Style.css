@@ -1,0 +1,58 @@
+.root{
+    -fx-font-size: 16;
+    -fx-min-width: 265;
+    -fx-max-width: 900;
+    -fx-background-color: lightsteelblue;
+}
+.button{
+    -fx-font-size: 16;
+    -fx-background-color: #BFE2E7;
+    -fx-text-fill: #221515;
+    -fx-font-family: fantasy;
+    -fx-min-width: 60;
+}
+.button:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #A7DCE4;
+}
+.button:pressed{
+    -fx-background-color: #A7C7E4;
+    -fx-text-fill: #810211;
+}
+#loginField,
+#passwordField{
+    -fx-font-style: italic;
+    -fx-text-fill: #182530;
+    -fx-font-weight: bold;
+    -fx-min-width: 100;
+    -fx-control-inner-background: #F6F5CC;
+    -fx-start-margin: 10;
+
+}
+#textArea{
+    -fx-control-inner-background: #FAD8F9;
+    -fx-text-fill: #210322;
+    -fx-font-size: 18;
+    -fx-font-family: fantasy;
+    -fx-font-style: italic;
+    -fx-min-width: 300;
+    -fx-min-height: 325;
+}
+#textField{
+    -fx-font-style: italic;
+    -fx-text-fill: #182530;
+    -fx-min-width: 180;
+    -fx-control-inner-background: #F6F5CC;
+}
+#regBtn {
+    -fx-background-color: salmon;
+}
+#clientList {
+    -fx-control-inner-background: burlywood;
+    -fx-text-fill: DarkSlateGrey;
+    -fx-font-size: 17;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-cursor: hand;
+}
+
