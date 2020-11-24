@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cloudyday"
+    android:textAlignment="center"
+    tools:context=".MainActivity"
+    tools:ignore="DuplicateIds">
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:textColor="@color/darkRed"
+        android:text="@string/cancel"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        app:icon="@drawable/ic_add_24dp"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:text="@string/add"
+        android:textSize="25sp"
+        android:textColor="@color/darkRed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="407dp"
+        android:layout_height="684dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Location"
+            android:layout_width="382dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/location"
+            android:textAlignment="center"
+            android:textColor="#191313"
+            android:textColorHighlight="#5C0202"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="#673AB7"
+            android:textIsSelectable="false"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/weather"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/weather"
+            android:textAlignment="center"
+            android:textColor="#070707"
+            android:textIsSelectable="false"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="384dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/temperatureMain"
+            android:textAlignment="center"
+            android:textColor="#050505"
+            android:textIsSelectable="false"
+            android:textSize="72sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tempRange"
+            android:layout_width="386dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/tempRange"
+            android:textAlignment="center"
+            android:textColor="#070707"
+            android:textIsSelectable="false"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/warnings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+            android:paddingStart="15dp"
+            android:paddingLeft="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/warnings"
+            android:textColor="#420101"
+            android:textIsSelectable="true"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
