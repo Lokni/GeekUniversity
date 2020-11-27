@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="tempRange">макс. 25, мин. 22</string>
-    <string name="weather">Приемущественно облочано</string>
+    <string name="weather">Приемущественно облачно</string>
     <string name="location">Город</string>
-    <string name="warnings">EUMETNET - MeteoAlarm: Потенциальная возможность нарушания коммуникаций из-за ветра.</string>
+    <string name="warnings">EUMETNET - MeteoAlarm: Потенциальная возможность нарушения коммуникаций из-за ветра.</string>
     <string name="add">Добавить</string>
     <string name="cancel">Отменить</string>
 </resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Text sizes -->
+    <dimen name="header">36sp</dimen>
+    <dimen name="regular">18sp</dimen>
+    <dimen name="main_text">72sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+
+    <dimen name="alert_block_margins">20dp</dimen>
+
+</resources>
