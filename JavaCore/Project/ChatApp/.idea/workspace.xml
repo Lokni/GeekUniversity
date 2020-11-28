@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1a2e9bd-d950-47d3-a783-f65ece714a65" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1jCOl3OMylOaxf4h2Wz8mkE1tLV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlite" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Client/src/main/java" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\KDS\Desktop\Android Developer\ChatApp\Client\src\main\java" />
+      <recent name="C:\Users\KDS\Desktop\Android Developer\ChatApp\Server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KDS\Desktop\Android Developer\ChatApp\History" />
+      <recent name="C:\Users\KDS\Desktop\Android Developer\ChatApp\Client\src\main\resources" />
+      <recent name="C:\Users\KDS\Desktop\Android Developer\ChatApp\Server\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="client.Main" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartServer" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="server.StartServer" />
+      <module name="Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.StartServer" />
+      <item itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.StartServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1a2e9bd-d950-47d3-a783-f65ece714a65" name="Default Changelist" comment="" />
+      <created>1603304757345</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1603304757345</updated>
+      <workItem from="1603304760169" duration="44920000" />
+      <workItem from="1603729787964" duration="27796000" />
+      <workItem from="1604158197057" duration="465000" />
+      <workItem from="1604506433320" duration="688000" />
+      <workItem from="1604586438896" duration="415000" />
+      <workItem from="1604682350258" duration="9573000" />
+      <workItem from="1604745225660" duration="11091000" />
+      <workItem from="1605440980752" duration="1078000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="579" y="165" key="#HTTP_Proxy" timestamp="1603374739479">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="579" y="165" key="#HTTP_Proxy/0.0.1600.860@0.0.1600.860" timestamp="1603374739479" />
+    <state x="392" y="88" width="816" height="729" key="#Intentions" timestamp="1603391238573">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="88" width="816" height="729" key="#Intentions/0.0.1600.860@0.0.1600.860" timestamp="1603391238573" />
+    <state x="280" y="4" key="#Project_Structure" timestamp="1604730579674">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="280" y="4" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1604730579674" />
+    <state x="189" y="271" key="#SQL_Dialects" timestamp="1603391888798">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="189" y="271" key="#SQL_Dialects/0.0.1600.860@0.0.1600.860" timestamp="1603391888798" />
+    <state x="240" y="286" key="#SQL_Resolution_Scopes" timestamp="1603391470451">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="240" y="286" key="#SQL_Resolution_Scopes/0.0.1600.860@0.0.1600.860" timestamp="1603391470451" />
+    <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603457606822">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1603457606822" />
+    <state x="553" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604730655439">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="553" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1604730655439" />
+    <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1603463343105">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1603463343105" />
+    <state x="619" y="121" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1603306098531">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="619" y="121" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1600.860@0.0.1600.860" timestamp="1603306098531" />
+    <state width="1557" height="223" key="GridCell.Tab.0.bottom" timestamp="1605039417646">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="223" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
+    <state width="1557" height="223" key="GridCell.Tab.0.center" timestamp="1605039417646">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="223" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
+    <state width="1557" height="223" key="GridCell.Tab.0.left" timestamp="1605039417646">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="223" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
+    <state width="1557" height="223" key="GridCell.Tab.0.right" timestamp="1605039417646">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="223" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
+    <state x="301" y="75" key="SettingsEditor" timestamp="1603729615438">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603729615438" />
+    <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1603391470437">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="200" height="441" key="SqlResolveConfigurable/0.0.1600.860@0.0.1600.860" timestamp="1603391470437" />
+    <state x="699" y="346" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603390561175">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="699" y="346" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.1600.860@0.0.1600.860" timestamp="1603390561175" />
+    <state x="656" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603391674416">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="656" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1600.860@0.0.1600.860" timestamp="1603391674416" />
+    <state x="345" y="166" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603807766215">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="345" y="166" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1603807766215" />
+    <state x="507" y="29" width="585" height="801" key="find.popup" timestamp="1603738145416">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="507" y="29" width="585" height="801" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1603738145416" />
+    <state x="437" y="91" key="new project wizard" timestamp="1605039413018">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="437" y="91" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1605039413018" />
+    <state x="591" y="288" key="scopes" timestamp="1603738123723">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="591" y="288" key="scopes/0.0.1600.860@0.0.1600.860" timestamp="1603738123723" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" log-message="true" log-stack="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

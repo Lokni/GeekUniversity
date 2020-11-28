@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">Hello Activity</string>
+    <string name="temperatureMain" translatable="false">23</string>
+    <string name="tempRange">max 25, min 22</string>
+    <string name="weather">Mainly cloudy</string>
+    <string name="location">City</string>
+    <string name="warnings">EUMETNET - MeteoAlarm: Potential disruption to communication due to wind.</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="weatherImage" translatable="false">sun</string>
+</resources>
