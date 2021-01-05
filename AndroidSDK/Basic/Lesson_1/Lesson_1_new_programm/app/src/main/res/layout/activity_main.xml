@@ -1,18 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:padding="@dimen/main_padding">
 
     <TextView
+        android:id="@+id/my_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/my_text"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="@dimen/my_text_size"
+        android:textStyle="bold|italic" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/text_input_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_between_view"
+        android:autofillHints="@string/auto_fill_hint"
+        android:backgroundTint="@color/teal_200"
+        android:ems="15"
+        android:gravity="start"
+        android:hint="@string/hint_text"
+        android:inputType="text"
+        android:maxEms="33"
+        android:minEms="10"
+        android:textColorHighlight="@color/purple_500"
+        android:textSize="@dimen/hint_size"/>
+
+
+    <Button
+        android:id="@+id/my_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_between_view"
+        android:text="@string/my_button"
+        android:textColorHighlight="@color/teal_200" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_between_view"
+        android:text="@string/switch_text"
+        android:textOn="@string/on"
+        android:textOff="@string/off"
+        android:checked="false"
+        app:showText="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <CheckBox
+        android:id="@+id/my_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/check_box_text"
+        android:checked="true"
+        android:textStyle="italic"/>
+
+    <ToggleButton
+        android:id="@+id/my_toggle_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/toggle_button"
+        android:checked="true"
+        android:layout_marginTop="@dimen/margin_between_view"
+        android:fontFamily="monospace"
+        android:textStyle="bold"/>
+
+
+
+</LinearLayout>

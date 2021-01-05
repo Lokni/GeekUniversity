@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_padding">30dp</dimen>
+    <dimen name="my_text_size">18sp</dimen>
+    <dimen name="hint_size">14sp</dimen>
+    <dimen name="margin_between_view">12dp</dimen>
+</resources>
