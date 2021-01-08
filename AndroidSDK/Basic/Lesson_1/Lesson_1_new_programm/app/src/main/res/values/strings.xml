@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FirstLessonHW</string>
+    <!--  Strings for first tasks  -->
+    <string name="my_text">Here is some text for text view block.</string>
+    <string name="hint_text">That is hint text for edit text block</string>
+    <string name="auto_fill_hint">Write some text here…</string>
+    <string name="my_button">My Button</string>
+    <string name="switch_text">Switch block</string>
+    <string name="on">on</string>
+    <string name="off">off</string>
+    <string name="check_box_text">That is check box</string>
+    <string name="toggle_button">That is toggle button</string>
+<!--  Strings for second tasks  -->
+    <string name="hint_text_input_type">Text input type</string>
+    <string name="hint_number_input_type">Number input type</string>
+    <string name="hint_person_name_input_type">Person name input type</string>
+    <string name="hint_phone_input_type">Phone input type</string>
+    <string name="hint_password_input_type">Password input type</string>
+    <string name="hint_email_input_type">Email input type</string>
+    <string name="hint_date_type">Date input type</string>
+
+</resources>

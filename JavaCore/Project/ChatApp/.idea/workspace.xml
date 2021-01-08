@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1a2e9bd-d950-47d3-a783-f65ece714a65" name="Default Changelist" comment="" />
+    <list default="true" id="c1a2e9bd-d950-47d3-a783-f65ece714a65" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ChatApp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Server/target/classes/server/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/server/DBauthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Server/target/classes/server/DBauthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/Server/target/classes/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/server/StartServer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/target/classes/server/StartServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Server/target/classes/server/StartServer.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,17 +29,14 @@
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1jCOl3OMylOaxf4h2Wz8mkE1tLV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,10 +44,12 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Client/src/main/java" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -57,7 +65,7 @@
       <recent name="C:\Users\KDS\Desktop\Android Developer\ChatApp\Server\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.StartServer">
     <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="client.Main" />
       <module name="Client" />
@@ -84,14 +92,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.StartServer" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.StartServer" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -111,97 +130,23 @@
       <workItem from="1604682350258" duration="9573000" />
       <workItem from="1604745225660" duration="11091000" />
       <workItem from="1605440980752" duration="1078000" />
+      <workItem from="1608318174332" duration="143000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="579" y="165" key="#HTTP_Proxy" timestamp="1603374739479">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="579" y="165" key="#HTTP_Proxy/0.0.1600.860@0.0.1600.860" timestamp="1603374739479" />
-    <state x="392" y="88" width="816" height="729" key="#Intentions" timestamp="1603391238573">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="392" y="88" width="816" height="729" key="#Intentions/0.0.1600.860@0.0.1600.860" timestamp="1603391238573" />
-    <state x="280" y="4" key="#Project_Structure" timestamp="1604730579674">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="280" y="4" key="#Project_Structure/0.0.1600.860@0.0.1600.860" timestamp="1604730579674" />
-    <state x="189" y="271" key="#SQL_Dialects" timestamp="1603391888798">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="189" y="271" key="#SQL_Dialects/0.0.1600.860@0.0.1600.860" timestamp="1603391888798" />
-    <state x="240" y="286" key="#SQL_Resolution_Scopes" timestamp="1603391470451">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="240" y="286" key="#SQL_Resolution_Scopes/0.0.1600.860@0.0.1600.860" timestamp="1603391470451" />
-    <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603457606822">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="392" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1603457606822" />
-    <state x="553" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604730655439">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="553" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1600.860@0.0.1600.860" timestamp="1604730655439" />
-    <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1603463343105">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="605" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1603463343105" />
-    <state x="619" y="121" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1603306098531">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="619" y="121" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1600.860@0.0.1600.860" timestamp="1603306098531" />
-    <state width="1557" height="223" key="GridCell.Tab.0.bottom" timestamp="1605039417646">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="223" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
-    <state width="1557" height="223" key="GridCell.Tab.0.center" timestamp="1605039417646">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="223" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
-    <state width="1557" height="223" key="GridCell.Tab.0.left" timestamp="1605039417646">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="223" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
-    <state width="1557" height="223" key="GridCell.Tab.0.right" timestamp="1605039417646">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1557" height="223" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1605039417646" />
-    <state x="301" y="75" key="SettingsEditor" timestamp="1603729615438">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="301" y="75" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1603729615438" />
-    <state width="200" height="441" key="SqlResolveConfigurable" timestamp="1603391470437">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="200" height="441" key="SqlResolveConfigurable/0.0.1600.860@0.0.1600.860" timestamp="1603391470437" />
-    <state x="699" y="346" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603390561175">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="699" y="346" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.1600.860@0.0.1600.860" timestamp="1603390561175" />
-    <state x="656" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603391674416">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="656" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1600.860@0.0.1600.860" timestamp="1603391674416" />
-    <state x="345" y="166" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603807766215">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="345" y="166" width="909" height="629" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1600.860@0.0.1600.860" timestamp="1603807766215" />
-    <state x="507" y="29" width="585" height="801" key="find.popup" timestamp="1603738145416">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="507" y="29" width="585" height="801" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1603738145416" />
-    <state x="437" y="91" key="new project wizard" timestamp="1605039413018">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="437" y="91" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1605039413018" />
-    <state x="591" y="288" key="scopes" timestamp="1603738123723">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="591" y="288" key="scopes/0.0.1600.860@0.0.1600.860" timestamp="1603738123723" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
