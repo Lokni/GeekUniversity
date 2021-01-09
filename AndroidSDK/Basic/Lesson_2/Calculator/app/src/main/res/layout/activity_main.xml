@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/main_padding"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/num_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/field_margin_top"
+        android:textSize="@dimen/display_num_size"
+        android:text="@string/default_number"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:paddingBottom="@dimen/main_padding"
+        app:layout_constraintBottom_toTopOf="@id/cancel_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_cancel"
+        app:layout_constraintEnd_toStartOf="@id/percent_button"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_field"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/percent_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_percent"
+        app:layout_constraintEnd_toStartOf="@id/divide_button"
+        app:layout_constraintTop_toBottomOf="@id/num_field" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/divide_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_division"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_field" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_seven"
+        style="@style/num_pad_style"
+        android:text="@string/b_seven"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cancel_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_eight"
+        style="@style/num_pad_style"
+        android:text="@string/b_eight"
+        app:layout_constraintStart_toEndOf="@id/num_seven"
+        app:layout_constraintTop_toBottomOf="@id/cancel_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_nine"
+        style="@style/num_pad_style"
+        android:text="@string/b_nine"
+        app:layout_constraintStart_toEndOf="@id/num_eight"
+        app:layout_constraintTop_toBottomOf="@id/cancel_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/multiply_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cancel_button" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_four"
+        style="@style/num_pad_style"
+        android:text="@string/b_four"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_five"
+        style="@style/num_pad_style"
+        android:text="@string/b_five"
+        app:layout_constraintStart_toEndOf="@id/num_four"
+        app:layout_constraintTop_toBottomOf="@id/num_seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_six"
+        style="@style/num_pad_style"
+        android:text="@string/b_six"
+        app:layout_constraintStart_toEndOf="@id/num_five"
+        app:layout_constraintTop_toBottomOf="@id/num_seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/minus_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_minus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_one"
+        style="@style/num_pad_style"
+        android:text="@string/b_one"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_two"
+        style="@style/num_pad_style"
+        android:text="@string/b_two"
+        app:layout_constraintStart_toEndOf="@id/num_one"
+        app:layout_constraintTop_toBottomOf="@id/num_four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_three"
+        style="@style/num_pad_style"
+        android:text="@string/b_three"
+        app:layout_constraintStart_toEndOf="@id/num_two"
+        app:layout_constraintTop_toBottomOf="@id/num_four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plus_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_plus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/num_zero"
+        style="@style/num_pad_style"
+        android:text="@string/b_zero"
+        app:layout_constraintEnd_toStartOf="@id/comma_button"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/comma_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_comma"
+        app:layout_constraintEnd_toStartOf="@id/equally_button"
+        app:layout_constraintTop_toBottomOf="@id/num_one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/equally_button"
+        style="@style/num_pad_style"
+        android:text="@string/b_equally"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_one" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

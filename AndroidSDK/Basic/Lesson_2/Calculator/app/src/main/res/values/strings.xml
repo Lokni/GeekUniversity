@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="default_number">0</string>
+    <!--  Numbers  -->
+    <string name="b_one">1</string>
+    <string name="b_two">2</string>
+    <string name="b_three">3</string>
+    <string name="b_four">4</string>
+    <string name="b_five">5</string>
+    <string name="b_six">6</string>
+    <string name="b_seven">7</string>
+    <string name="b_eight">8</string>
+    <string name="b_nine">9</string>
+    <string name="b_zero">0</string>
+    <!--  Operations  -->
+    <string name="b_multiply">x</string>
+    <string name="b_division">÷</string>
+    <string name="b_plus">+</string>
+    <string name="b_minus">-</string>
+    <string name="b_equally">=</string>
+    <string name="b_percent">%</string>
+    <string name="b_cancel">C</string>
+    <string name="b_comma">,</string>
+
+
+
+</resources>
