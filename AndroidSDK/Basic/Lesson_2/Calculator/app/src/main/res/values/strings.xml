@@ -21,6 +21,7 @@
     <string name="b_percent">%</string>
     <string name="b_cancel">C</string>
     <string name="b_comma">,</string>
+    <string name="b_abs">+/-</string>
 
 
 </resources>
