@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <full-backup-content>
-    <include domain="file"
-    path="string"
-    requireFlags="clientSideEncryption" />
-    <exclude domain="database"/>
+    <include
+        domain="file"
+        path="string"
+        requireFlags="clientSideEncryption" />
+    <exclude domain="database" />
 </full-backup-content>
