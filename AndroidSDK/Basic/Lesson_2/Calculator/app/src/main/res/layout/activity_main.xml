@@ -3,15 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:gravity="center"
+    android:gravity="center|bottom"
     android:orientation="vertical"
     android:padding="@dimen/main_padding">
 
     <TextView
         android:id="@+id/number_field"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/num_field_height"
-        android:background="@drawable/polar_light_background"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="end"
         android:text="@string/default_number"
@@ -26,6 +25,7 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cancel_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/light_gray"
@@ -33,6 +33,7 @@
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/abs_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/light_gray"
@@ -40,6 +41,7 @@
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/percent_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/light_gray"
@@ -47,6 +49,7 @@
             android:textColor="@color/black" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/divide_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/dark_orange"
@@ -59,21 +62,25 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_7"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_seven" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_8"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_eight" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_9"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_nine" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multiply_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/dark_orange"
@@ -86,21 +93,25 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_4"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_four" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_5"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_five" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_6"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_six" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/dark_orange"
@@ -113,21 +124,25 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_1"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_one" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_2"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_two" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_3"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_three" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/dark_orange"
@@ -140,16 +155,19 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/n_0"
             style="@style/num_pad_style"
             android:layout_weight="2.2"
             android:text="@string/b_zero" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/comma_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:text="@string/b_comma" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/equal_button"
             style="@style/num_pad_style"
             android:layout_weight="1"
             android:backgroundTint="@color/dark_orange"
