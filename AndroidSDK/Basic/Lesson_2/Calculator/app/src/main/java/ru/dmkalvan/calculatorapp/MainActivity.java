@@ -17,26 +17,33 @@ package ru.dmkalvan.calculatorapp;
  * @date: 09.01.21
  */
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView numberField = findViewById(R.id.number_field);
+    private TextView numberField;
     Calculator calculator = new Calculator();
-    private String x;
     private String y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        numberField = findViewById(R.id.number_field);
         initButton();
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -71,37 +78,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setNumberField(9);
                 break;
             case R.id.plus_button:
-               x = numberField.getText().toString();
+                int x = Integer.parseInt(numberField.getText().toString());
                 break;
             case R.id.minus_button:
-                x = numberField.getText().toString();
+                x = Integer.parseInt(numberField.getText().toString());
                 break;
             case R.id.multiply_button:
-                x = numberField.getText().toString();
+                x = Integer.parseInt(numberField.getText().toString());
                 break;
             case R.id.divide_button:
-                x = numberField.getText().toString();
+                x = Integer.parseInt(numberField.getText().toString());
                 break;
             case R.id.equal_button:
-                x = numberField.getText().toString();
+                x = Integer.parseInt(numberField.getText().toString());
                 break;
             case R.id.percent_button:
-                x = numberField.getText().toString();
+                x = Integer.parseInt(numberField.getText().toString());
                 break;
             case R.id.abs_button:
-                x = numberField.getText().toString();
+                x = Integer.parseInt(numberField.getText().toString());
                 break;
             case R.id.cancel_button:
-                x = numberField.getText().toString();
+                x = Integer.parseInt(numberField.getText().toString());
                 break;
 
         }
     }
-    private void setNumberField(int x){
-        numberField.setText(String.valueOf(x));
+
+    @SuppressLint({"SetTextI18n"})
+    private void setNumberField(int x) {
+        if (numberField.getText().toString().length() == 1 &&
+                numberField.getText().toString().equalsIgnoreCase("0")) {
+            numberField.setText(String.valueOf(x));
+        } else {
+            numberField.setText(numberField.getText() + String.valueOf(x));
+        }
     }
 
-    private void initButton(){
+    private void initButton() {
         Button btn0 = findViewById(R.id.n_0);
         btn0.setOnClickListener(this);
         Button btn1 = findViewById(R.id.n_1);
