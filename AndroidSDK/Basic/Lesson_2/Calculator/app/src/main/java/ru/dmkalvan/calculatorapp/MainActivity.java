@@ -1,39 +1,42 @@
 package ru.dmkalvan.calculatorapp;
 /**
- * С этого урока будем писать приложение «Калькулятор».
- * <p>
- * 1. Выберите макет для работы с калькулятором. Обоснуйте,
- * почему будете использовать именно этот тип макета.
- * <p>
- * 2. Сверстайте главный экран калькулятора.
- * На нём должны быть кнопки, обозначающие цифры и знаки действия:
- * «Плюс», «Умножить», «Разделить», «Вычесть» и т. п.
- * <p>
- * 3*. Добавьте фоновый рисунок для экрана калькулятора.
- * Следите, чтобы рисунок был для общего использования.
- * Ресурсы: PxHere, Pixabay
+ * 1. Напишите обработку каждой кнопки из макета калькулятора.
+ *
+ * 2. Создайте объект с данными и операциями калькулятора. Продумайте, каким образом будете
+ *    хранить введённые пользователем данные.
+ *
+ * 3. * Создайте макет калькулятора для горизонтальной ориентации экрана и отображайте его в
+ *    ландшафтной ориентации.
  *
  * @author Dmitri Kalvan
- * @date: 09.01.21
+ * @14.01.21
  */
 
 import android.annotation.SuppressLint;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView numberField;
+    Button btn0, btn1, btn2, btn3, btn4, btn5,
+            btn6, btn7, btn8, btn9,
+            btnPlus, btnMinus, btnMultiply, btnDivide,
+            btnEqual, btnPercent, btnComma, btnABS, btnCancel;
+
     Calculator calculator = new Calculator();
-    private String y;
+    private TextView numberField;
+    private float y;
+    private float x;
+    private boolean operationAdd,
+            operationSubtract,
+            operationMultiply,
+            operationDivide;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButton();
     }
 
-    @SuppressLint("NonConstantResourceId")
+    @SuppressLint({"NonConstantResourceId", "ResourceAsColor"})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -78,30 +81,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setNumberField(9);
                 break;
             case R.id.plus_button:
-                int x = Integer.parseInt(numberField.getText().toString());
+                setX(Float.parseFloat(numberField.getText().toString()));
+                operationAdd = true;
+                numberField.setText(R.string.default_number);
                 break;
             case R.id.minus_button:
-                x = Integer.parseInt(numberField.getText().toString());
+                setX(Float.parseFloat(numberField.getText().toString()));
+                operationSubtract = true;
+                numberField.setText(R.string.default_number);
                 break;
             case R.id.multiply_button:
-                x = Integer.parseInt(numberField.getText().toString());
+                setX(Float.parseFloat(numberField.getText().toString()));
+                operationMultiply = true;
+                numberField.setText(R.string.default_number);
                 break;
             case R.id.divide_button:
-                x = Integer.parseInt(numberField.getText().toString());
+                setX(Float.parseFloat(numberField.getText().toString()));
+                operationDivide = true;
+                numberField.setText(R.string.default_number);
                 break;
             case R.id.equal_button:
-                x = Integer.parseInt(numberField.getText().toString());
+                setY(Integer.parseInt(numberField.getText().toString()));
+                if (operationAdd) {
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.add(getX(), getY())));
+                }
+                if (operationSubtract) {
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.subtract(getX(), getY())));
+                }
+                if (operationMultiply) {
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.multiply(getX(), getY())));
+                }
+                if (operationDivide) {
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.divide(getX(), getY())));
+                }
+
                 break;
             case R.id.percent_button:
-                x = Integer.parseInt(numberField.getText().toString());
+                Float percent = Float.parseFloat(numberField.getText().toString()) / 100;
+                numberField.setText(String.format("%s", percent));
                 break;
             case R.id.abs_button:
-                x = Integer.parseInt(numberField.getText().toString());
+                if (numberField.getText().toString().startsWith("-")) {
+                    Float ch = Float.parseFloat(numberField.getText().toString()) * -1;
+                    numberField.setText(String.format("%s", ch));
+                } else {
+                    numberField.setText(String.format("-%s", numberField.getText().toString()));
+                }
                 break;
             case R.id.cancel_button:
-                x = Integer.parseInt(numberField.getText().toString());
+                numberField.setText("");
                 break;
-
+            case R.id.comma_button:
+                numberField.setText(String.format("%s.", numberField.getText().toString()));
         }
     }
 
@@ -116,43 +147,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initButton() {
-        Button btn0 = findViewById(R.id.n_0);
+        btn0 = findViewById(R.id.n_0);
         btn0.setOnClickListener(this);
-        Button btn1 = findViewById(R.id.n_1);
+        btn1 = findViewById(R.id.n_1);
         btn1.setOnClickListener(this);
-        Button btn2 = findViewById(R.id.n_2);
+        btn2 = findViewById(R.id.n_2);
         btn2.setOnClickListener(this);
-        Button btn3 = findViewById(R.id.n_3);
+        btn3 = findViewById(R.id.n_3);
         btn3.setOnClickListener(this);
-        Button btn4 = findViewById(R.id.n_4);
+        btn4 = findViewById(R.id.n_4);
         btn4.setOnClickListener(this);
-        Button btn5 = findViewById(R.id.n_5);
+        btn5 = findViewById(R.id.n_5);
         btn5.setOnClickListener(this);
-        Button btn6 = findViewById(R.id.n_6);
+        btn6 = findViewById(R.id.n_6);
         btn6.setOnClickListener(this);
-        Button btn7 = findViewById(R.id.n_7);
+        btn7 = findViewById(R.id.n_7);
         btn7.setOnClickListener(this);
-        Button btn8 = findViewById(R.id.n_8);
+        btn8 = findViewById(R.id.n_8);
         btn8.setOnClickListener(this);
-        Button btn9 = findViewById(R.id.n_9);
+        btn9 = findViewById(R.id.n_9);
         btn9.setOnClickListener(this);
-        Button btnPlus = findViewById(R.id.plus_button);
+        btnPlus = findViewById(R.id.plus_button);
         btnPlus.setOnClickListener(this);
-        Button btnMinus = findViewById(R.id.minus_button);
+        btnMinus = findViewById(R.id.minus_button);
         btnMinus.setOnClickListener(this);
-        Button btnMultiply = findViewById(R.id.multiply_button);
+        btnMultiply = findViewById(R.id.multiply_button);
         btnMultiply.setOnClickListener(this);
-        Button btnDivide = findViewById(R.id.divide_button);
+        btnDivide = findViewById(R.id.divide_button);
         btnDivide.setOnClickListener(this);
-        Button btnEqual = findViewById(R.id.equal_button);
+        btnEqual = findViewById(R.id.equal_button);
         btnEqual.setOnClickListener(this);
-        Button btnPercent = findViewById(R.id.percent_button);
+        btnPercent = findViewById(R.id.percent_button);
         btnPercent.setOnClickListener(this);
-        Button btnComma = findViewById(R.id.comma_button);
+        btnComma = findViewById(R.id.comma_button);
         btnComma.setOnClickListener(this);
-        Button btnABS = findViewById(R.id.abs_button);
+        btnABS = findViewById(R.id.abs_button);
         btnABS.setOnClickListener(this);
-        Button btnCancel = findViewById(R.id.cancel_button);
+        btnCancel = findViewById(R.id.cancel_button);
         btnCancel.setOnClickListener(this);
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
     }
 }

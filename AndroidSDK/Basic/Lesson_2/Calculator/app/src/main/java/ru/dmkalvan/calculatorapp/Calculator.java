@@ -1,7 +1,21 @@
 package ru.dmkalvan.calculatorapp;
 
 public class Calculator {
-    private int x;
-    private int y;
-    private int result;
+
+    public float add(float x, float y) {
+        return x + y;
+    }
+
+    public float subtract(float x, float y) {
+        return x - y;
+    }
+
+    public float multiply(float x, float y) {
+        return x * y;
+    }
+
+    public float divide(float x, float y) {
+        return x / y;
+    }
+
 }
