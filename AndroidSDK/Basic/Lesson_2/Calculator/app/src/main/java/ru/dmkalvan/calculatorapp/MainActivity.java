@@ -1,12 +1,12 @@
 package ru.dmkalvan.calculatorapp;
 /**
  * 1. Напишите обработку каждой кнопки из макета калькулятора.
- *
+ * <p>
  * 2. Создайте объект с данными и операциями калькулятора. Продумайте, каким образом будете
- *    хранить введённые пользователем данные.
- *
+ * хранить введённые пользователем данные.
+ * <p>
  * 3. * Создайте макет калькулятора для горизонтальной ориентации экрана и отображайте его в
- *    ландшафтной ориентации.
+ * ландшафтной ориентации.
  *
  * @author Dmitri Kalvan
  * @14.01.21
@@ -28,10 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btnPlus, btnMinus, btnMultiply, btnDivide,
             btnEqual, btnPercent, btnComma, btnABS, btnCancel;
 
-    Calculator calculator = new Calculator();
+    Calculator calculator = Calculator.getInstance();
     private TextView numberField;
-    private float y;
-    private float x;
     private boolean operationAdd,
             operationSubtract,
             operationMultiply,
@@ -81,40 +79,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setNumberField(9);
                 break;
             case R.id.plus_button:
-                setX(Float.parseFloat(numberField.getText().toString()));
+                calculator.setX(Float.parseFloat(numberField.getText().toString()));
                 operationAdd = true;
                 numberField.setText(R.string.default_number);
                 break;
             case R.id.minus_button:
-                setX(Float.parseFloat(numberField.getText().toString()));
+                calculator.setX(Float.parseFloat(numberField.getText().toString()));
                 operationSubtract = true;
                 numberField.setText(R.string.default_number);
                 break;
             case R.id.multiply_button:
-                setX(Float.parseFloat(numberField.getText().toString()));
+                calculator.setX(Float.parseFloat(numberField.getText().toString()));
                 operationMultiply = true;
                 numberField.setText(R.string.default_number);
                 break;
             case R.id.divide_button:
-                setX(Float.parseFloat(numberField.getText().toString()));
+                calculator.setX(Float.parseFloat(numberField.getText().toString()));
                 operationDivide = true;
                 numberField.setText(R.string.default_number);
                 break;
             case R.id.equal_button:
-                setY(Integer.parseInt(numberField.getText().toString()));
+                calculator.setY(Integer.parseInt(numberField.getText().toString()));
                 if (operationAdd) {
-                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.add(getX(), getY())));
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.add()));
                 }
                 if (operationSubtract) {
-                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.subtract(getX(), getY())));
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.subtract()));
                 }
                 if (operationMultiply) {
-                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.multiply(getX(), getY())));
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.multiply()));
                 }
                 if (operationDivide) {
-                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.divide(getX(), getY())));
+                    numberField.setText(String.format(Locale.getDefault(), "%s", calculator.divide()));
                 }
-
                 break;
             case R.id.percent_button:
                 Float percent = Float.parseFloat(numberField.getText().toString()) / 100;
@@ -185,21 +182,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnABS.setOnClickListener(this);
         btnCancel = findViewById(R.id.cancel_button);
         btnCancel.setOnClickListener(this);
-    }
-
-    public float getX() {
-        return x;
-    }
-
-    public void setX(float x) {
-        this.x = x;
-    }
-
-    public float getY() {
-        return y;
-    }
-
-    public void setY(float y) {
-        this.y = y;
     }
 }
