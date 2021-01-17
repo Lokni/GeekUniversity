@@ -13,7 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-
+    <!-- Keyboard style -->
     <style name="num_pad_style">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">@dimen/button_width</item>
@@ -23,10 +23,12 @@
         <item name="android:padding">@dimen/button_padding</item>
         <item name="android:clickable">true</item>
     </style>
+    <!-- Background and main text color Dark theme -->
     <style name="dark_theme" parent="Theme.CalculatorApp">
         <item name="android:background">@color/black</item>
         <item name="android:textColor">@color/white</item>
     </style>
+    <!-- Background and main text color Light theme -->
     <style name="light_theme" parent="Theme.CalculatorApp">
         <item name="android:background">@color/white</item>
         <item name="android:textColor">@color/black</item>

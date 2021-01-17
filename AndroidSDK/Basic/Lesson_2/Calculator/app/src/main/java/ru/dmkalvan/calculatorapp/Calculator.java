@@ -68,7 +68,7 @@ public class Calculator implements Parcelable {
     public float divide() {
         try {
             return x / y;
-        } catch (ArithmeticException e){
+        } catch (ArithmeticException e) {
             return 0;
         }
     }

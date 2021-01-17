@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.plus_button:
                 calculator.setX(Float.parseFloat(numberField.getText().toString()));
                 operationAdd = true;
-                btnPlus.getCompoundDrawableTintMode();
                 numberField.setText(R.string.default_number);
                 break;
             case R.id.minus_button:
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 numberField.setText(String.format("%s", percent));
                 break;
             case R.id.abs_button:
-                if (numberField.getText().toString() != null){
+                if (numberField.getText().toString() != null) {
                     Float ch = Float.parseFloat(numberField.getText().toString()) * -1;
                     numberField.setText(String.format("%s", ch));
                 }
