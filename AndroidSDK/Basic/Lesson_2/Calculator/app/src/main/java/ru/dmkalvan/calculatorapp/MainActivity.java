@@ -1,15 +1,17 @@
 package ru.dmkalvan.calculatorapp;
 /**
- * 1. Напишите обработку каждой кнопки из макета калькулятора.
+ * 1. Переделайте все кнопки на материал.
  * <p>
- * 2. Создайте объект с данными и операциями калькулятора. Продумайте, каким образом будете
- * хранить введённые пользователем данные.
+ * 2. Все размеры и строки сделайте ресурсами.
  * <p>
- * 3. * Создайте макет калькулятора для горизонтальной ориентации экрана и отображайте его в
- * ландшафтной ориентации.
+ * 3. Создайте стиль для своего приложения.
+ * <p>
+ * 4*. Создайте светлую и тёмную тему для приложения.
+ * <p>
+ * (*) Задача для дополнительного обучения.
  *
  * @author Dmitri Kalvan
- * @14.01.21
+ * @16.01.21
  */
 
 import android.annotation.SuppressLint;
@@ -18,11 +20,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String KEY = "calculator";
+
     Button btn0, btn1, btn2, btn3, btn4, btn5,
             btn6, btn7, btn8, btn9,
             btnPlus, btnMinus, btnMultiply, btnDivide,
@@ -182,5 +187,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnABS.setOnClickListener(this);
         btnCancel = findViewById(R.id.cancel_button);
         btnCancel.setOnClickListener(this);
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(KEY, calculator);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calculator = savedInstanceState.getParcelable(KEY);
+        numberField.setText(String.format("%s", calculator.getX()));
     }
 }
