@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.plus_button:
                 calculator.setX(Float.parseFloat(numberField.getText().toString()));
                 operationAdd = true;
+                btnPlus.getCompoundDrawableTintMode();
                 numberField.setText(R.string.default_number);
                 break;
             case R.id.minus_button:
@@ -107,15 +108,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calculator.setY(Integer.parseInt(numberField.getText().toString()));
                 if (operationAdd) {
                     numberField.setText(String.format(Locale.getDefault(), "%s", calculator.add()));
+                    operationAdd = false;
                 }
                 if (operationSubtract) {
                     numberField.setText(String.format(Locale.getDefault(), "%s", calculator.subtract()));
+                    operationSubtract = false;
                 }
                 if (operationMultiply) {
                     numberField.setText(String.format(Locale.getDefault(), "%s", calculator.multiply()));
+                    operationMultiply = false;
                 }
                 if (operationDivide) {
                     numberField.setText(String.format(Locale.getDefault(), "%s", calculator.divide()));
+                    operationDivide = false;
                 }
                 break;
             case R.id.percent_button:
@@ -123,11 +128,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 numberField.setText(String.format("%s", percent));
                 break;
             case R.id.abs_button:
-                if (numberField.getText().toString().startsWith("-")) {
+                if (numberField.getText().toString() != null){
                     Float ch = Float.parseFloat(numberField.getText().toString()) * -1;
                     numberField.setText(String.format("%s", ch));
-                } else {
-                    numberField.setText(String.format("-%s", numberField.getText().toString()));
                 }
                 break;
             case R.id.cancel_button:
