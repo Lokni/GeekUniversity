@@ -1,10 +1,9 @@
 package ru.dmkalvan.calculatorapp;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
-
-import android.os.Bundle;
-import android.widget.CompoundButton;
 
 public class SettingsActivity extends AppCompatActivity {
 
