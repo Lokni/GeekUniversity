@@ -4,6 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity"
+    android:theme="@style/dark_theme">
+
+    <TextView
+        android:id="@+id/settings_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/settings"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="@dimen/field_margin_top"
+        />
+
+    <TextView
+        android:id="@+id/theme_btn_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/theme_toggle_btn"
+        android:text="@string/theme"
+        android:layout_marginTop="@dimen/margin"
+        app:layout_constraintBaseline_toBaselineOf="@id/theme_toggle_btn"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/theme_toggle_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/settings_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/theme_btn_label"
+        android:checked="true"
+        android:textOn="@string/dark"
+        app:showText="true"
+        android:textOff="@string/light"
+        android:layout_marginTop="@dimen/margin"
+        />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
