@@ -4,47 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity"
-    android:theme="@style/dark_theme">
+    tools:context=".SettingsActivity">
 
     <TextView
         android:id="@+id/settings_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/field_margin_top"
         android:text="@string/settings"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_marginTop="@dimen/field_margin_top"
-        />
-
-    <TextView
-        android:id="@+id/theme_btn_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/settings_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/theme_switch_btn"
-        android:text="@string/theme"
-        android:layout_marginTop="@dimen/margin"
-        app:layout_constraintBaseline_toBaselineOf="@id/theme_switch_btn"/>
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/theme_switch_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/settings_label"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/theme_btn_label"
-        android:checked="true"
-        android:textOn="@string/dark"
-        app:showText="true"
-        android:textOff="@string/light"
-        android:layout_marginTop="@dimen/margin"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_label">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/dark"
+            android:textColor="@color/design_default_color_secondary" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/light"
+            android:textColor="@color/design_default_color_secondary" />
+    </RadioGroup>
 
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/accept_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:text="@string/ok"
+        android:textColor="@color/design_default_color_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioButtons" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

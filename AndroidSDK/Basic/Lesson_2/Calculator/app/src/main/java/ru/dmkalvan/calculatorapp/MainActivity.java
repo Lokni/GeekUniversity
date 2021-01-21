@@ -15,6 +15,7 @@ package ru.dmkalvan.calculatorapp;
  */
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn0, btn1, btn2, btn3, btn4, btn5,
             btn6, btn7, btn8, btn9,
             btnPlus, btnMinus, btnMultiply, btnDivide,
-            btnEqual, btnPercent, btnComma, btnABS, btnCancel;
+            btnEqual, btnPercent, btnComma, btnABS, btnCancel, btnSettings;
 
     Calculator calculator = Calculator.getInstance();
     private TextView numberField;
@@ -137,6 +138,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.comma_button:
                 numberField.setText(String.format("%s.", numberField.getText().toString()));
+                break;
+            case R.id.call_settings_activity:
+                Intent settings = new Intent(this, SettingsActivity.class);
+                startActivity(settings);
         }
     }
 
@@ -189,6 +194,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnABS.setOnClickListener(this);
         btnCancel = findViewById(R.id.cancel_button);
         btnCancel.setOnClickListener(this);
+        btnSettings = findViewById(R.id.call_settings_activity);
+        btnSettings.setOnClickListener(this);
     }
 
     @Override
