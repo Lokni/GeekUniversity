@@ -22,12 +22,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String KEY = "calculator";
+    private static final int REQUEST_CODE_SETTINGS_ACTIVITY = 101;
 
     Button btn0, btn1, btn2, btn3, btn4, btn5,
             btn6, btn7, btn8, btn9,
@@ -41,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             operationMultiply,
             operationDivide;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.dark_theme);
         setContentView(R.layout.activity_main);
         numberField = findViewById(R.id.number_field);
         initButton();
@@ -141,7 +143,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.call_settings_activity:
                 Intent settings = new Intent(this, SettingsActivity.class);
-                startActivity(settings);
+                startActivityForResult(settings, REQUEST_CODE_SETTINGS_ACTIVITY);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode != REQUEST_CODE_SETTINGS_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+        if (resultCode == RESULT_OK) {
+            setTheme(Integer.parseInt(String.valueOf(data)));
         }
     }
 
