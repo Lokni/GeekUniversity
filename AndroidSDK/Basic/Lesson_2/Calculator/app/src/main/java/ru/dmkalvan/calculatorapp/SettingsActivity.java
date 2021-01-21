@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.radiobutton.MaterialRadioButton;
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity implements Constants{
     //    Settings name
     private static final String NameSharedPreference = "MyStyle";
     private static final String AppTheme = "APP_THEME";
@@ -27,6 +27,8 @@ public class SettingsActivity extends AppCompatActivity {
         initThemeChooser();
         Button btnOk =  findViewById(R.id.accept_theme);
         btnOk.setOnClickListener(v ->{
+            Intent intentResult = new Intent();
+            intentResult.putExtra(MY_APP_THEME, getAppTheme(R.style.dark_theme));
             finish();
         });
     }
