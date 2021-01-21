@@ -29,6 +29,7 @@ public class SettingsActivity extends AppCompatActivity implements Constants{
         btnOk.setOnClickListener(v ->{
             Intent intentResult = new Intent();
             intentResult.putExtra(MY_APP_THEME, getAppTheme(R.style.dark_theme));
+            setResult(RESULT_OK, intentResult);
             finish();
         });
     }
