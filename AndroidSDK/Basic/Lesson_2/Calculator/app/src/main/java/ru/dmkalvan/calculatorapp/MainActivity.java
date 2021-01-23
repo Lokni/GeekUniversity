@@ -1,37 +1,40 @@
 package ru.dmkalvan.calculatorapp;
 /**
- * 1. Переделайте все кнопки на материал.
+ * 1. Создайте активити с настройками, где включите выбор темы приложения.
  * <p>
- * 2. Все размеры и строки сделайте ресурсами.
+ * 2. Доделайте приложение «Калькулятор». Это последний урок с созданием приложения
+ * «Калькулятор».
  * <p>
- * 3. Создайте стиль для своего приложения.
- * <p>
- * 4*. Создайте светлую и тёмную тему для приложения.
+ * 3. * Сделайте интент-фильтр для запуска калькулятора извне, а также напишите тестовое
+ * приложение, запускающее приложение-калькулятор.
  * <p>
  * (*) Задача для дополнительного обучения.
  *
  * @author Dmitri Kalvan
- * @16.01.21
+ * @20.01.21
  */
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String KEY = "calculator";
+    private static final int REQUEST_CODE_SETTINGS_ACTIVITY = 101;
 
     Button btn0, btn1, btn2, btn3, btn4, btn5,
             btn6, btn7, btn8, btn9,
             btnPlus, btnMinus, btnMultiply, btnDivide,
-            btnEqual, btnPercent, btnComma, btnABS, btnCancel;
+            btnEqual, btnPercent, btnComma, btnABS, btnCancel, btnSettings;
 
     Calculator calculator = Calculator.getInstance();
     private TextView numberField;
@@ -40,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             operationMultiply,
             operationDivide;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.dark_theme);
         setContentView(R.layout.activity_main);
         numberField = findViewById(R.id.number_field);
         initButton();
@@ -137,6 +140,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.comma_button:
                 numberField.setText(String.format("%s.", numberField.getText().toString()));
+                break;
+            case R.id.call_settings_activity:
+                Intent settings = new Intent(this, SettingsActivity.class);
+                startActivityForResult(settings, REQUEST_CODE_SETTINGS_ACTIVITY);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode != REQUEST_CODE_SETTINGS_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+        if (resultCode == RESULT_OK) {
+            setTheme(Integer.parseInt(String.valueOf(data)));
         }
     }
 
@@ -189,6 +206,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnABS.setOnClickListener(this);
         btnCancel = findViewById(R.id.cancel_button);
         btnCancel.setOnClickListener(this);
+        btnSettings = findViewById(R.id.call_settings_activity);
+        btnSettings.setOnClickListener(this);
     }
 
     @Override
