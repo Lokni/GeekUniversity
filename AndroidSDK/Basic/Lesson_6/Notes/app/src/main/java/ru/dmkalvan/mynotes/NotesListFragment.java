@@ -1,5 +1,6 @@
 package ru.dmkalvan.mynotes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class NotesListFragment extends Fragment {
+public class NotesListFragment extends Fragment implements Constants {
 
     public NotesListFragment() {
         // Required empty public constructor
@@ -53,6 +54,16 @@ public class NotesListFragment extends Fragment {
             textView.setText(note);
             textView.setTextSize(30f);
             linearView.addView(textView);
+            final int fi = i;
+            textView.setOnClickListener(v -> {
+                showNotes(fi);
+            });
         }
+    }
+
+    private void showNotes(int index) {
+        Intent intent = new Intent(getActivity(), NoteActivity.class);
+        intent.putExtra(YOUR_NOTES, index);
+        startActivity(intent);
     }
 }

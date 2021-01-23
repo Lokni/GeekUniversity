@@ -1,4 +1,8 @@
 package ru.dmkalvan.mynotes;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * С этого урока мы начинаем разработку приложения с заметками.
  * <p>
@@ -22,9 +26,6 @@ package ru.dmkalvan.mynotes;
  * @date 23.01.21
  */
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 

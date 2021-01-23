@@ -15,7 +15,6 @@
     </style>
     <style name="notes_list_label_style" parent="Theme.MyNotes">
         <item name="android:textSize">@dimen/large_plus_fonts</item>
-        <item name="android:fontFamily">cursive|bold</item>
-        <item name="android:clickable">true</item>
+        <item name="android:font">@id/line1</item>
     </style>
 </resources>

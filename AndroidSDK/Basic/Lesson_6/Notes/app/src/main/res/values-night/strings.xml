@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MyNotes</string>
     <string name="label_hint">Note label</string>
     <string name="description_hint">Add description</string>
     <string name="date_hint">21.01.21</string>
