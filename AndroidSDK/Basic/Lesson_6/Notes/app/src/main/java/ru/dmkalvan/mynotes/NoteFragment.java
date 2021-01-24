@@ -5,12 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
 public class NoteFragment extends Fragment implements Constants {
 
-    EditText label, description, date, body;
+    TextView label, description, date, body;
 
     private StructureData noteData;
 
@@ -37,7 +38,6 @@ public class NoteFragment extends Fragment implements Constants {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_note, container, false);
         initView(view);
-        populateView();
         return view;
     }
 
@@ -46,6 +46,7 @@ public class NoteFragment extends Fragment implements Constants {
         description = view.findViewById(R.id.note_description);
         date = view.findViewById(R.id.note_date);
         body = view.findViewById(R.id.note_body);
+        populateView();
     }
 
     private void populateView() {

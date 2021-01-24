@@ -7,7 +7,7 @@
     android:padding="@dimen/screen_padding"
     tools:context=".NoteFragment">
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <TextView
         android:id="@+id/note_label"
         style="@style/notes_list_label_style"
         android:layout_width="match_parent"
@@ -17,16 +17,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <TextView
         android:id="@+id/note_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/medium_plus_fonts"
+        android:gravity="start"
         app:layout_constraintEnd_toEndOf="@id/note_label"
         app:layout_constraintStart_toStartOf="@id/note_label"
         app:layout_constraintTop_toBottomOf="@id/note_label" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <TextView
         android:id="@+id/note_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +37,7 @@
         app:layout_constraintStart_toStartOf="@id/note_label"
         app:layout_constraintTop_toBottomOf="@id/note_description" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <TextView
         android:id="@+id/note_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
