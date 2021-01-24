@@ -24,10 +24,10 @@ class StructureData implements Parcelable {
     }
 
     public StructureData(String noteLabel, String noteDescription, String noteDate, String noteBody) {
-        this.noteLabel = noteLabel;
-        this.noteDescription = noteDescription;
-        this.noteDate = noteDate;
-        this.noteBody = noteBody;
+        setNoteLabel(noteLabel);
+        setNoteDescription(noteDescription);
+        setNoteDate(noteDate);
+        setNoteBody(noteBody);
     }
 
     protected StructureData(Parcel in) {
@@ -51,6 +51,22 @@ class StructureData implements Parcelable {
 
     public String getNoteBody() {
         return noteBody;
+    }
+
+    public void setNoteLabel(String noteLabel) {
+        this.noteLabel = noteLabel;
+    }
+
+    public void setNoteDescription(String noteDescription) {
+        this.noteDescription = noteDescription;
+    }
+
+    public void setNoteDate(String noteDate) {
+        this.noteDate = noteDate;
+    }
+
+    public void setNoteBody(String noteBody) {
+        this.noteBody = noteBody;
     }
 
     @Override

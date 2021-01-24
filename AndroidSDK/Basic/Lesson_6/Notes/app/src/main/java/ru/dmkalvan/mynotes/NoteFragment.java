@@ -37,7 +37,7 @@ public class NoteFragment extends Fragment implements Constants {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_note, container, false);
         initView(view);
-
+        populateView();
         return view;
     }
 
@@ -46,6 +46,16 @@ public class NoteFragment extends Fragment implements Constants {
         description = view.findViewById(R.id.note_description);
         date = view.findViewById(R.id.note_date);
         body = view.findViewById(R.id.note_body);
+    }
+
+    private void populateView() {
+        if (getArguments() != null) {
+            noteData = getArguments().getParcelable(YOUR_NOTES);
+            label.setText(noteData.getNoteLabel());
+            description.setText(noteData.getNoteDescription());
+            date.setText(noteData.getNoteDate());
+            body.setText(noteData.getNoteBody());
+        }
     }
 
 

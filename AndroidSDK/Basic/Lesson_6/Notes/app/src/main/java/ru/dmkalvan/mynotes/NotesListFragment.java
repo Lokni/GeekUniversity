@@ -52,7 +52,7 @@ public class NotesListFragment extends Fragment implements Constants {
         dataCollector(1, new StructureData("To do",
                 "On this weekend", "21.01.21",
                 "Lorem12"));
-        dataCollector(0, new StructureData("Wedding Anniversary",
+        dataCollector(2, new StructureData("Wedding Anniversary",
                 "Next month", "15.01.21",
                 "Booking table in restaurant, get smoking from dry cleaning, order flowers. "));
         initNotesList(view);
@@ -70,9 +70,7 @@ public class NotesListFragment extends Fragment implements Constants {
             textView.setTextSize(30f);
             linearView.addView(textView);
             final int fi = i;
-            textView.setOnClickListener(v -> {
-                showNotes(fi);
-            });
+            textView.setOnClickListener(v -> showNotes(fi));
         }
     }
 

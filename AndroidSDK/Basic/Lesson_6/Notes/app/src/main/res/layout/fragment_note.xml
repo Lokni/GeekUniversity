@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="@dimen/screen_padding"
     tools:context=".NoteFragment">
 
-    <com.google.android.material.textfield.TextInputEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/note_label"
         style="@style/notes_list_label_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin"
         android:gravity="center_horizontal"
-        android:hint="@string/label_hint" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/note_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin"
-        android:hint="@string/description_hint"
-        android:textSize="@dimen/medium_plus_fonts" />
+        android:textSize="@dimen/medium_plus_fonts"
+        app:layout_constraintEnd_toEndOf="@id/note_label"
+        app:layout_constraintStart_toStartOf="@id/note_label"
+        app:layout_constraintTop_toBottomOf="@id/note_label" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/note_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
-        android:hint="@string/date_hint"
-        android:textSize="@dimen/small_plus_fonts" />
+        android:textSize="@dimen/small_plus_fonts"
+        app:layout_constraintEnd_toEndOf="@id/note_label"
+        app:layout_constraintStart_toStartOf="@id/note_label"
+        app:layout_constraintTop_toBottomOf="@id/note_description" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/note_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin"
-        android:hint="@string/body_hint"
-        android:textSize="@dimen/regular_plus_fonts" />
-</LinearLayout>
+        android:padding="@dimen/screen_padding"
+        android:textSize="@dimen/regular_plus_fonts"
+        app:layout_constraintEnd_toEndOf="@id/note_label"
+        app:layout_constraintStart_toStartOf="@id/note_label"
+        app:layout_constraintTop_toBottomOf="@id/note_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
