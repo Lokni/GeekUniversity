@@ -21,8 +21,8 @@
         android:id="@+id/note_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/medium_plus_fonts"
         android:gravity="start"
+        android:textSize="@dimen/medium_plus_fonts"
         app:layout_constraintEnd_toEndOf="@id/note_label"
         app:layout_constraintStart_toStartOf="@id/note_label"
         app:layout_constraintTop_toBottomOf="@id/note_label" />

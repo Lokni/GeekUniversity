@@ -41,28 +41,28 @@ class StructureData implements Parcelable {
         return noteLabel;
     }
 
-    public String getNoteDescription() {
-        return noteDescription;
-    }
-
-    public String getNoteDate() {
-        return noteDate;
-    }
-
-    public String getNoteBody() {
-        return noteBody;
-    }
-
     public void setNoteLabel(String noteLabel) {
         this.noteLabel = noteLabel;
+    }
+
+    public String getNoteDescription() {
+        return noteDescription;
     }
 
     public void setNoteDescription(String noteDescription) {
         this.noteDescription = noteDescription;
     }
 
+    public String getNoteDate() {
+        return noteDate;
+    }
+
     public void setNoteDate(String noteDate) {
         this.noteDate = noteDate;
+    }
+
+    public String getNoteBody() {
+        return noteBody;
     }
 
     public void setNoteBody(String noteBody) {

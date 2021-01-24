@@ -1,6 +1,7 @@
 package ru.dmkalvan.mynotes;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +17,9 @@ import java.util.HashMap;
 
 public class NotesListFragment extends Fragment implements Constants {
 
-    private HashMap<Integer, StructureData> notesBank = new HashMap<>();
-
+    private final HashMap<Integer, StructureData> notesBank = new HashMap<>();
+    private StructureData myNote;
+    private boolean isLandscape;
 
     public NotesListFragment() {
         // Required empty public constructor
@@ -58,6 +60,23 @@ public class NotesListFragment extends Fragment implements Constants {
         initNotesList(view);
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelable(YOUR_NOTES, myNote);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+
+        if (savedInstanceState != null) {
+            myNote = savedInstanceState.getParcelable(YOUR_NOTES);
+        }
+    }
+
     //    Create notes list on the screen.
     private void initNotesList(View view) {
         LinearLayout linearView = (LinearLayout) view;
@@ -76,15 +95,16 @@ public class NotesListFragment extends Fragment implements Constants {
 
     private void showNotes(int index) {
         Intent intent = new Intent(getActivity(), NoteActivity.class);
-        intent.putExtra(YOUR_NOTES, dataPicker(index));
+        myNote = dataPicker(index);
+        intent.putExtra(YOUR_NOTES, myNote);
         startActivity(intent);
     }
 
-    private void dataCollector(int index, StructureData sd){
+    private void dataCollector(int index, StructureData sd) {
         notesBank.put(index, sd);
     }
 
-    private StructureData dataPicker(int index){
-        return  notesBank.get(index);
+    private StructureData dataPicker(int index) {
+        return notesBank.get(index);
     }
 }
