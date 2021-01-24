@@ -6,11 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class NoteFragment extends Fragment implements Constants {
+
     EditText label, description, date, body;
 
     private StructureData noteData;
@@ -19,9 +18,10 @@ public class NoteFragment extends Fragment implements Constants {
         // Required empty public constructor
     }
 
-    public static NoteFragment newInstance(String param1, String param2) {
+    public static NoteFragment newInstance(StructureData sd) {
         NoteFragment fragment = new NoteFragment();
         Bundle args = new Bundle();
+        args.putParcelable(YOUR_NOTES, sd);
         fragment.setArguments(args);
         return fragment;
     }
@@ -35,15 +35,10 @@ public class NoteFragment extends Fragment implements Constants {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_note, container, false);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        View view = inflater.inflate(R.layout.fragment_note, container, false);
         initView(view);
-        populateView();
-        saveNoteData();
+
+        return view;
     }
 
     private void initView(View view) {
@@ -53,18 +48,5 @@ public class NoteFragment extends Fragment implements Constants {
         body = view.findViewById(R.id.note_body);
     }
 
-    private void populateView() {
-        label.setText(noteData.getNoteLabel());
-        description.setText(noteData.getNoteDescription());
-        date.setText(noteData.getNoteDate());
-        body.setText(noteData.getNoteBody());
-    }
-
-    private void saveNoteData() {
-        noteData = new StructureData(label.getText().toString(),
-                description.getText().toString(),
-                date.getText().toString(),
-                body.getText().toString());
-    }
 
 }

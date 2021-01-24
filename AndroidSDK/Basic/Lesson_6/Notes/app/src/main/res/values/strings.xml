@@ -4,4 +4,7 @@
     <string name="description_hint">Add description</string>
     <string name="date_hint">21.01.21</string>
     <string name="body_hint">Write here your notes.</string>
+    <string name="shopping_list">Shopping list</string>
+    <string name="to_do">To do list</string>
+    <string name="wedding_anniversary">Wedding anniversary</string>
 </resources>

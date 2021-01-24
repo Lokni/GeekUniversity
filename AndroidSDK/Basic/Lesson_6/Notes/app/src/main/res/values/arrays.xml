@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="notes_example">
-        <item>Shopping list</item>
-        <item>To do list</item>
-        <item>Wedding anniversary</item>
+        <item>@string/shopping_list</item>
+        <item>@string/to_do</item>
+        <item>@string/wedding_anniversary</item>
     </string-array>
+
+    <string-array name="note_hint">
+        <item>@string/label_hint</item>
+        <item>@string/description_hint</item>
+        <item>@string/date_hint</item>
+        <item>@string/body_hint</item>
+    </string-array>
+
 </resources>
