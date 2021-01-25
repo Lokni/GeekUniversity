@@ -79,7 +79,7 @@ public class NotesListFragment extends Fragment implements Constants {
             currentPosition = savedInstanceState.getInt(CURRENT_NOTE, 0);
         }
 
-        if (isLandscape){
+        if (isLandscape) {
             showLandNotes(currentPosition);
         }
 
@@ -105,7 +105,7 @@ public class NotesListFragment extends Fragment implements Constants {
     }
 
     private void showNotes(int index) {
-        if (isLandscape){
+        if (isLandscape) {
             showLandNotes(index);
         } else {
             showPortNotes(index);
@@ -124,7 +124,7 @@ public class NotesListFragment extends Fragment implements Constants {
         fragmentTransaction.commit();
     }
 
-    private void showPortNotes(int index){
+    private void showPortNotes(int index) {
         Intent intent = new Intent(getActivity(), NoteActivity.class);
         myNote = dataPicker(index);
         intent.putExtra(YOUR_NOTES, myNote);
