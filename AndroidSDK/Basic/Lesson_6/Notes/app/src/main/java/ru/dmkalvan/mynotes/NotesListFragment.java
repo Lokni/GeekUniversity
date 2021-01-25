@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.HashMap;
 
@@ -72,6 +74,9 @@ public class NotesListFragment extends Fragment implements Constants {
 
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
+        if (isLandscape){
+            showLandNotes(0);
+        }
         if (savedInstanceState != null) {
             myNote = savedInstanceState.getParcelable(YOUR_NOTES);
         }
@@ -94,6 +99,26 @@ public class NotesListFragment extends Fragment implements Constants {
     }
 
     private void showNotes(int index) {
+        if (isLandscape){
+            showLandNotes(index);
+        } else {
+            showPortNotes(index);
+        }
+    }
+
+    private void showLandNotes(int index) {
+        myNote = dataPicker(index);
+        NoteFragment detail = NoteFragment.newInstance(myNote);
+        FragmentManager fragmentManager =
+                requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.note, detail);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commit();
+    }
+
+    private void showPortNotes(int index){
         Intent intent = new Intent(getActivity(), NoteActivity.class);
         myNote = dataPicker(index);
         intent.putExtra(YOUR_NOTES, myNote);
