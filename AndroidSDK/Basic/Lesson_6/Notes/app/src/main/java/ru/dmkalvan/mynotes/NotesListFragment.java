@@ -22,6 +22,7 @@ public class NotesListFragment extends Fragment implements Constants {
     private final HashMap<Integer, StructureData> notesBank = new HashMap<>();
     private StructureData myNote;
     private boolean isLandscape;
+    private int currentPosition = 0;
 
     public NotesListFragment() {
         // Required empty public constructor
@@ -64,7 +65,7 @@ public class NotesListFragment extends Fragment implements Constants {
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putParcelable(YOUR_NOTES, myNote);
+        outState.putInt(CURRENT_NOTE, currentPosition);
         super.onSaveInstanceState(outState);
     }
 
@@ -74,12 +75,14 @@ public class NotesListFragment extends Fragment implements Constants {
 
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
 
-        if (isLandscape){
-            showLandNotes(0);
-        }
         if (savedInstanceState != null) {
-            myNote = savedInstanceState.getParcelable(YOUR_NOTES);
+            currentPosition = savedInstanceState.getInt(CURRENT_NOTE, 0);
         }
+
+        if (isLandscape){
+            showLandNotes(currentPosition);
+        }
+
     }
 
     //    Create notes list on the screen.
@@ -94,7 +97,10 @@ public class NotesListFragment extends Fragment implements Constants {
             textView.setTextSize(30f);
             linearView.addView(textView);
             final int fi = i;
-            textView.setOnClickListener(v -> showNotes(fi));
+            textView.setOnClickListener(v -> {
+                currentPosition = fi;
+                showNotes(currentPosition);
+            });
         }
     }
 
