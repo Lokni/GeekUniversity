@@ -1,6 +1,5 @@
 package ru.dmkalvan.mynotes;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -126,8 +125,8 @@ public class NotesListFragment extends Fragment implements Constants {
 
     private void showPortNotes(int index) {
         myNote = dataPicker(index);
-       NoteFragment detail = NoteFragment.newInstance(myNote);
-       FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        NoteFragment detail = NoteFragment.newInstance(myNote);
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, detail);
