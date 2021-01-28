@@ -125,10 +125,15 @@ public class NotesListFragment extends Fragment implements Constants {
     }
 
     private void showPortNotes(int index) {
-        Intent intent = new Intent(getActivity(), NoteActivity.class);
         myNote = dataPicker(index);
-        intent.putExtra(YOUR_NOTES, myNote);
-        startActivity(intent);
+       NoteFragment detail = NoteFragment.newInstance(myNote);
+       FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, detail);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
     private void dataCollector(int index, StructureData sd) {
