@@ -7,4 +7,9 @@
     <string name="shopping_list">Shopping list</string>
     <string name="to_do">To do list</string>
     <string name="wedding_anniversary">Wedding anniversary</string>
+    <string name="add_note">Add note</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="send_to">Send to…</string>
+    <string name="clear">Clear</string>
 </resources>
