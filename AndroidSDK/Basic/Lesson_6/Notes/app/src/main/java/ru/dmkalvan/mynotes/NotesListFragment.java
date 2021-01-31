@@ -7,14 +7,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.HashMap;
 
@@ -29,13 +29,6 @@ public class NotesListFragment extends Fragment implements Constants {
         // Required empty public constructor
     }
 
-    public static NotesListFragment newInstance() {
-        NotesListFragment fragment = new NotesListFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +40,23 @@ public class NotesListFragment extends Fragment implements Constants {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notes_list, container, false);
         setHasOptionsMenu(true);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view_lines);
+        String[] notes = getResources().getStringArray(R.array.notes_example);
+        initRecyclerView(recyclerView, notes);
         return view;
+
+    }
+
+    private void initRecyclerView(RecyclerView recyclerView, String[] notes) {
+        recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        NoteListAdapter adapter = new NoteListAdapter(notes);
+        recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener((view, position) -> showNotes(position));
 
     }
 
@@ -68,7 +77,6 @@ public class NotesListFragment extends Fragment implements Constants {
         dataCollector(2, new StructureData("Wedding Anniversary",
                 "Next month", "15.01.21",
                 "Booking table in restaurant, get smoking from dry cleaning, order flowers. "));
-        initNotesList(view);
     }
 
     @Override
@@ -93,24 +101,6 @@ public class NotesListFragment extends Fragment implements Constants {
 
     }
 
-    //    Create notes list on the screen.
-    private void initNotesList(View view) {
-        LinearLayout linearView = (LinearLayout) view;
-        String[] notes = getResources().getStringArray(R.array.notes_example);
-
-        for (int i = 0; i < notes.length; i++) {
-            String note = notes[i];
-            TextView textView = new TextView(getContext());
-            textView.setText(note);
-            textView.setTextSize(30f);
-            linearView.addView(textView);
-            final int fi = i;
-            textView.setOnClickListener(v -> {
-                currentPosition = fi;
-                showNotes(currentPosition);
-            });
-        }
-    }
 
     private void showNotes(int index) {
         if (isLandscape) {

@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHolder> {
 
     private final String[] dataSource;
+    private OnItemClickListener itemClickListener;
 
     public NoteListAdapter(String[] dataSource) {
         this.dataSource = dataSource;
@@ -36,6 +37,14 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHo
         return dataSource.length;
     }
 
+    public void setOnItemClickListener(OnItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private final TextView textView;
@@ -43,10 +52,18 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = (TextView) itemView;
+
+            textView.setOnClickListener(v -> {
+                if (itemClickListener != null) {
+                    itemClickListener.onItemClick(v, getAdapterPosition());
+                }
+            });
         }
 
         public TextView getTextView() {
             return textView;
         }
+
+
     }
 }
