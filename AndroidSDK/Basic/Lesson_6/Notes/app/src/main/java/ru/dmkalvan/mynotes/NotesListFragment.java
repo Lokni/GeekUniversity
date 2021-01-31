@@ -40,6 +40,7 @@ public class NotesListFragment extends Fragment implements Constants {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notes_list, container, false);
         setHasOptionsMenu(true);
+        exampleListCreator();
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view_lines);
         String[] notes = getResources().getStringArray(R.array.notes_example);
         initRecyclerView(recyclerView, notes);
@@ -63,20 +64,6 @@ public class NotesListFragment extends Fragment implements Constants {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.main, menu);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        dataCollector(0, new StructureData("Shopping List",
-                "Need to buy today", "24.01.21",
-                "1. Potato\n2. Onion\n3. Bread"));
-        dataCollector(1, new StructureData("To do",
-                "On this weekend", "21.01.21",
-                "Lorem12"));
-        dataCollector(2, new StructureData("Wedding Anniversary",
-                "Next month", "15.01.21",
-                "Booking table in restaurant, get smoking from dry cleaning, order flowers. "));
     }
 
     @Override
@@ -118,8 +105,9 @@ public class NotesListFragment extends Fragment implements Constants {
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.note, detail);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        fragmentTransaction.commit();
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
     private void showPortNotes(int index) {
@@ -140,5 +128,19 @@ public class NotesListFragment extends Fragment implements Constants {
 
     private StructureData dataPicker(int index) {
         return notesBank.get(index);
+    }
+
+
+
+    private void exampleListCreator(){
+        dataCollector(0, new StructureData("Shopping List",
+                "Need to buy today", "24.01.21",
+                "1. Potato\n2. Onion\n3. Bread"));
+        dataCollector(1, new StructureData("To do",
+                "On this weekend", "21.01.21",
+                "Lorem12"));
+        dataCollector(2, new StructureData("Wedding Anniversary",
+                "Next month", "15.01.21",
+                "Booking table in restaurant, get smoking from dry cleaning, order flowers. "));
     }
 }
