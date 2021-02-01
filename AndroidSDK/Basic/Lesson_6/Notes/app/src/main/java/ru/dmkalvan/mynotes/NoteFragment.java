@@ -12,13 +12,13 @@ public class NoteFragment extends Fragment implements Constants {
 
     TextView label, description, date, body;
 
-    private StructureData noteData;
+    private DataHandler noteData;
 
     public NoteFragment() {
         // Required empty public constructor
     }
 
-    public static NoteFragment newInstance(StructureData sd) {
+    public static NoteFragment newInstance(DataHandler sd) {
         NoteFragment fragment = new NoteFragment();
         Bundle args = new Bundle();
         args.putParcelable(YOUR_NOTES, sd);

@@ -3,16 +3,16 @@ package ru.dmkalvan.mynotes;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-class StructureData implements Parcelable {
-    public static final Creator<StructureData> CREATOR = new Creator<StructureData>() {
+class DataHandler implements Parcelable {
+    public static final Creator<DataHandler> CREATOR = new Creator<DataHandler>() {
         @Override
-        public StructureData createFromParcel(Parcel in) {
-            return new StructureData(in);
+        public DataHandler createFromParcel(Parcel in) {
+            return new DataHandler(in);
         }
 
         @Override
-        public StructureData[] newArray(int size) {
-            return new StructureData[size];
+        public DataHandler[] newArray(int size) {
+            return new DataHandler[size];
         }
     };
     private String noteLabel;
@@ -20,17 +20,17 @@ class StructureData implements Parcelable {
     private String noteDate;
     private String noteBody;
 
-    public StructureData() {
+    public DataHandler() {
     }
 
-    public StructureData(String noteLabel, String noteDescription, String noteDate, String noteBody) {
+    public DataHandler(String noteLabel, String noteDescription, String noteDate, String noteBody) {
         setNoteLabel(noteLabel);
         setNoteDescription(noteDescription);
         setNoteDate(noteDate);
         setNoteBody(noteBody);
     }
 
-    protected StructureData(Parcel in) {
+    protected DataHandler(Parcel in) {
         noteLabel = in.readString();
         noteDescription = in.readString();
         noteDate = in.readString();

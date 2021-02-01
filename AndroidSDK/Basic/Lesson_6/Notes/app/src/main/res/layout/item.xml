@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/margin"
-    android:padding="@dimen/screen_padding"
-    android:textSize="@dimen/large_plus_fonts" />
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/cardview_default_elevation"
+    android:background="@color/linen">
+
+    <LinearLayout
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/large_plus_fonts"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_fonts"
+            android:gravity="center"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,5 +1,6 @@
 package ru.dmkalvan.mynotes;
 
+import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,15 +14,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.HashMap;
-
 public class NotesListFragment extends Fragment implements Constants {
 
-    private final HashMap<Integer, StructureData> notesBank = new HashMap<>();
-    private StructureData myNote;
+    private DataSource data;
+    private DataHandler myNote;
     private boolean isLandscape;
     private int currentPosition = 0;
 
@@ -40,22 +40,31 @@ public class NotesListFragment extends Fragment implements Constants {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notes_list, container, false);
         setHasOptionsMenu(true);
-        exampleListCreator();
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view_lines);
-        String[] notes = getResources().getStringArray(R.array.notes_example);
-        initRecyclerView(recyclerView, notes);
+        data = new DataSourceImpl(getResources()).init();
+        initRecyclerView(recyclerView, data);
         return view;
 
     }
 
-    private void initRecyclerView(RecyclerView recyclerView, String[] notes) {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private void initRecyclerView(RecyclerView recyclerView, DataSource data) {
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        NoteListAdapter adapter = new NoteListAdapter(notes);
+        NoteListAdapter adapter = new NoteListAdapter(data);
         recyclerView.setAdapter(adapter);
+
+        DividerItemDecoration decorator = new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL);
+        decorator.setDrawable(getResources().getDrawable(R.drawable.separator, null));
+        recyclerView.addItemDecoration(decorator);
 
         adapter.setOnItemClickListener((view, position) -> showNotes(position));
 
@@ -98,7 +107,7 @@ public class NotesListFragment extends Fragment implements Constants {
     }
 
     private void showLandNotes(int index) {
-        myNote = dataPicker(index);
+        myNote = data.getData(index);
         NoteFragment detail = NoteFragment.newInstance(myNote);
         FragmentManager fragmentManager =
                 requireActivity().getSupportFragmentManager();
@@ -111,9 +120,9 @@ public class NotesListFragment extends Fragment implements Constants {
     }
 
     private void showPortNotes(int index) {
-        myNote = dataPicker(index);
+        myNote = data.getData(index);
         NoteFragment detail = NoteFragment.newInstance(myNote);
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, detail);
@@ -122,25 +131,4 @@ public class NotesListFragment extends Fragment implements Constants {
         fragmentTransaction.commitAllowingStateLoss();
     }
 
-    private void dataCollector(int index, StructureData sd) {
-        notesBank.put(index, sd);
-    }
-
-    private StructureData dataPicker(int index) {
-        return notesBank.get(index);
-    }
-
-
-
-    private void exampleListCreator(){
-        dataCollector(0, new StructureData("Shopping List",
-                "Need to buy today", "24.01.21",
-                "1. Potato\n2. Onion\n3. Bread"));
-        dataCollector(1, new StructureData("To do",
-                "On this weekend", "21.01.21",
-                "Lorem12"));
-        dataCollector(2, new StructureData("Wedding Anniversary",
-                "Next month", "15.01.21",
-                "Booking table in restaurant, get smoking from dry cleaning, order flowers. "));
-    }
 }

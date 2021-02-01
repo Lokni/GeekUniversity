@@ -4,12 +4,31 @@
     <string name="description_hint">Add description</string>
     <string name="date_hint">21.01.21</string>
     <string name="body_hint">Write here your notes.</string>
-    <string name="shopping_list">Shopping list</string>
-    <string name="to_do">To do list</string>
-    <string name="wedding_anniversary">Wedding anniversary</string>
+
     <string name="add_note">Add note</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
     <string name="send_to">Send to…</string>
     <string name="clear">Clear</string>
+    <!--  Arrays example data  -->
+    <!--  Titles  -->
+    <string name="shopping_list">Shopping list</string>
+    <string name="to_do">To do list</string>
+    <string name="wedding_anniversary">Wedding anniversary</string>
+    <!--  Descriptions  -->
+    <string name="shopping_description">Need to buy today</string>
+    <string name="to_do_description">On these weekends</string>
+    <string name="wedding_anniversary_description">In next month</string>
+    <!--  Dates  -->
+    <string name="date_1">23.01.21</string>
+    <string name="date_2">25.01,21</string>
+    <string name="date_3">26.01.21</string>
+    <!--  Body  -->
+    <string name="shopping_list_body">1. Potato
+        2. Onion
+        3. Bread
+    </string>
+    <string name="to_do_body">Lorem12</string>
+    <string name="wedding_body">Lorem15</string>
+
 </resources>

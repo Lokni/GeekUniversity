@@ -13,4 +13,28 @@
         <item>@string/body_hint</item>
     </string-array>
 
+    <string-array name="titles">
+        <item>@string/shopping_list</item>
+        <item>@string/to_do</item>
+        <item>@string/wedding_anniversary</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>@string/shopping_description</item>
+        <item>@string/to_do_description</item>
+        <item>@string/wedding_anniversary_description</item>
+    </string-array>
+
+    <string-array name="dates">
+        <item>@string/date_1</item>
+        <item>@string/date_2</item>
+        <item>@string/date_3</item>
+    </string-array>
+
+    <string-array name="bodies">
+        <item>@string/shopping_list_body</item>
+        <item>@string/to_do_body</item>
+        <item>@string/wedding_body</item>
+    </string-array>
+
 </resources>

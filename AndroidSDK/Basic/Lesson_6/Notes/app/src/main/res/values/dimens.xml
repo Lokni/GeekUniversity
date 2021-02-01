@@ -15,4 +15,6 @@
     <dimen name="margin">8dp</dimen>
     <dimen name="margin_top_25">25dp</dimen>
     <dimen name="margin_top_14">14dp</dimen>
+    <dimen name="zero_dimen">0dp</dimen>
+    <dimen name="card_corner_radius">15dp</dimen>
 </resources>
