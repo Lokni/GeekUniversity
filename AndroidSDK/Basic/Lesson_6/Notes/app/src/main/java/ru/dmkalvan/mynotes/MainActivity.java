@@ -1,5 +1,6 @@
 package ru.dmkalvan.mynotes;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,12 +39,19 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         // Open transaction.
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        // Add fragment.
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        // Add transaction in back-stack
-        fragmentTransaction.addToBackStack(null);
-        // Close transaction.
-        fragmentTransaction.commitAllowingStateLoss();
+        // Check for orientation with already use Note.
+        if (getResources().getConfiguration().orientation ==
+                Configuration.ORIENTATION_LANDSCAPE && fragment instanceof NoteFragment) {
+            fragmentManager.popBackStack();
+        } else {
+            // Add fragment.
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            // Add transaction in back-stack
+            fragmentTransaction.addToBackStack(null);
+            // Close transaction.
+            fragmentTransaction.commitAllowingStateLoss();
+        }
+
 
     }
 
