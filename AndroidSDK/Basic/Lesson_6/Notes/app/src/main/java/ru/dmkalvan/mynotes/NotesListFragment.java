@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Objects;
+
 public class NotesListFragment extends Fragment implements Constants {
 
     private DataSource data;
@@ -62,7 +64,7 @@ public class NotesListFragment extends Fragment implements Constants {
         NoteListAdapter adapter = new NoteListAdapter(data);
         recyclerView.setAdapter(adapter);
 
-        DividerItemDecoration decorator = new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL);
+        DividerItemDecoration decorator = new DividerItemDecoration(Objects.requireNonNull(getContext()), LinearLayoutManager.VERTICAL);
         decorator.setDrawable(getResources().getDrawable(R.drawable.separator, null));
         recyclerView.addItemDecoration(decorator);
 
