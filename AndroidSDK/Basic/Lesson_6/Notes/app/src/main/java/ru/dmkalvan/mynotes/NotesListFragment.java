@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,6 +23,8 @@ import java.util.Objects;
 
 public class NotesListFragment extends Fragment implements Constants {
 
+    private RecyclerView recyclerView;
+    private NoteListAdapter adapter;
     private DataSource data;
     private DataHandler myNote;
     private boolean isLandscape;
@@ -41,12 +44,16 @@ public class NotesListFragment extends Fragment implements Constants {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notes_list, container, false);
+        initView(view);
         setHasOptionsMenu(true);
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view_lines);
-        data = new DataSourceImpl(getResources()).init();
-        initRecyclerView(recyclerView, data);
         return view;
 
+    }
+
+    private void initView(View view) {
+        recyclerView = view.findViewById(R.id.recycler_view_lines);
+        data = new DataSourceImpl(getResources()).init();
+        initRecyclerView();
     }
 
     @Override
@@ -55,13 +62,13 @@ public class NotesListFragment extends Fragment implements Constants {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    private void initRecyclerView(RecyclerView recyclerView, DataSource data) {
+    private void initRecyclerView() {
         recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        NoteListAdapter adapter = new NoteListAdapter(data);
+        adapter = new NoteListAdapter(data);
         recyclerView.setAdapter(adapter);
 
         DividerItemDecoration decorator = new DividerItemDecoration(Objects.requireNonNull(getContext()), LinearLayoutManager.VERTICAL);
@@ -77,6 +84,25 @@ public class NotesListFragment extends Fragment implements Constants {
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.main, menu);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_add:
+                callAddNote();
+                adapter.notifyItemInserted(data.size() - 1);
+                recyclerView.scrollToPosition(data.size() - 1);
+                return true;
+
+            case R.id.action_clear:
+                data.clearData();
+                adapter.notifyDataSetChanged();
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -126,6 +152,37 @@ public class NotesListFragment extends Fragment implements Constants {
     private void showPortNotes(int index) {
         myNote = data.getData(index);
         NoteFragment detail = NoteFragment.newInstance(myNote);
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, detail);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commitAllowingStateLoss();
+    }
+
+    private void callAddNote() {
+        if (isLandscape) {
+            callAddNewNoteLand();
+        } else {
+            callAddNotePort();
+        }
+    }
+
+    private void callAddNewNoteLand() {
+        AddNoteFragment detail = new AddNoteFragment();
+        FragmentManager fragmentManager =
+                requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.note, detail);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commitAllowingStateLoss();
+    }
+
+    private void callAddNotePort() {
+        AddNoteFragment detail = new AddNoteFragment();
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
