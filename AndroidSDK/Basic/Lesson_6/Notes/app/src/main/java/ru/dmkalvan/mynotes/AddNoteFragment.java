@@ -1,30 +1,24 @@
 package ru.dmkalvan.mynotes;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.fragment.app.Fragment;
-
-public class NoteFragment extends Fragment implements Constants {
-
+public class AddNoteFragment extends Fragment implements Constants{
     private TextView label, description, date, body;
+    private DataSource data;
 
-    private DataHandler noteData;
-
-    public NoteFragment() {
+    public AddNoteFragment() {
         // Required empty public constructor
     }
 
-    public static NoteFragment newInstance(DataHandler sd) {
-        NoteFragment fragment = new NoteFragment();
-        Bundle args = new Bundle();
-        args.putParcelable(YOUR_NOTES, sd);
-        fragment.setArguments(args);
-        return fragment;
-    }
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,8 +29,11 @@ public class NoteFragment extends Fragment implements Constants {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_note, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_note, container, false);
         initView(view);
+        if (body.getText() != null && label.getText() != null){
+            collectData();
+        }
         return view;
     }
 
@@ -45,18 +42,12 @@ public class NoteFragment extends Fragment implements Constants {
         description = view.findViewById(R.id.note_description);
         date = view.findViewById(R.id.note_date);
         body = view.findViewById(R.id.note_body);
-        populateView();
     }
 
-    private void populateView() {
-        if (getArguments() != null) {
-            noteData = getArguments().getParcelable(YOUR_NOTES);
-            label.setText(noteData.getNoteLabel());
-            description.setText(noteData.getNoteDescription());
-            date.setText(noteData.getNoteDate());
-            body.setText(noteData.getNoteBody());
-        }
+    private void collectData(){
+        data.saveData(new DataHandler(label.getText().toString(),
+                description.getText().toString(),
+                date.getText().toString(),
+                body.getText().toString()));
     }
-
-
 }

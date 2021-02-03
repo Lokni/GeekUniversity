@@ -26,6 +26,25 @@ public class DataSourceImpl implements DataSource {
         return this;
     }
 
+    public void saveData(DataHandler data) {
+        dataSource.add(data);
+    }
+
+    @Override
+    public void deleteData(int index) {
+        dataSource.remove(index);
+    }
+
+    @Override
+    public void editData(int index, DataHandler data) {
+        dataSource.set(index, data);
+    }
+
+    @Override
+    public void clearData() {
+        dataSource.clear();
+    }
+
     public DataHandler getData(int position) {
         return dataSource.get(position);
     }
