@@ -68,8 +68,10 @@ public class NotesListFragment extends Fragment implements Constants {
         decorator.setDrawable(getResources().getDrawable(R.drawable.separator, null));
         recyclerView.addItemDecoration(decorator);
 
-        adapter.setOnItemClickListener((view, position) -> showNotes(position));
-
+        adapter.setOnItemClickListener((view, position) -> {
+            currentPosition = position;
+            showNotes(currentPosition);
+        });
     }
 
     @Override

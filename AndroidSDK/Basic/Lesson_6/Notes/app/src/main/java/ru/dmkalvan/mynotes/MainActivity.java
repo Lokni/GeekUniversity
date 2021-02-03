@@ -10,17 +10,18 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 /**
- * 1. Создайте список ваших заметок.
+ * 1. Сделайте фрагмент добавления и редактирования данных, если вы ещё не сделали его.
  * <p>
- * 2. Создайте карточку для элемента списка.
+ * 2. Сделайте навигацию между фрагментами, также организуйте обмен данными между
+ * фрагментами.
  * <p>
- * 3. Класс данных, созданный на шестом уроке, используйте для заполнения карточки списка.
+ * 3. Создайте контекстное меню для изменения и удаления заметок.
  * <p>
- * 4. * Создайте фрагмент для редактирования данных в конкретной карточке.
- * Этот фрагмент пока можно вызвать через основное меню.
+ * 4. * Изучите, каким образом можно вызывать DatePicker в виде диалогового окна. Создайте
+ * текстовое поле, при нажатии на которое вызывалось бы диалоговое окно с DatePicker.
  *
  * @author Dmitri Kalvan
- * @date 31.01.21
+ * @date 03.02.21
  */
 
 
@@ -46,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             // Add fragment.
             fragmentTransaction.replace(R.id.fragment_container, fragment);
-            // Add transaction in back-stack
-            fragmentTransaction.addToBackStack(null);
             // Close transaction.
             fragmentTransaction.commitAllowingStateLoss();
         }
