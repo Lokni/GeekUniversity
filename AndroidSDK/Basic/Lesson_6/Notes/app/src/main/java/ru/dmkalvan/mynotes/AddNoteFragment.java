@@ -12,11 +12,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class AddNoteFragment extends Fragment implements Constants {
+    DataHandler newData;
     private TextView label, description, date, body;
-    private DataSource data;
-    private DataHandler myData;
 
     public AddNoteFragment() {
         // Required empty public constructor
@@ -47,24 +48,33 @@ public class AddNoteFragment extends Fragment implements Constants {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_save) {
-            collectData();
+            addDataToList();
+
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void initView(View view) {
-        label = view.findViewById(R.id.note_label);
-        description = view.findViewById(R.id.note_description);
-        date = view.findViewById(R.id.note_date);
-        body = view.findViewById(R.id.note_body);
+        label = view.findViewById(R.id.edit_label);
+        description = view.findViewById(R.id.edit_description);
+        date = view.findViewById(R.id.edit_date);
+        body = view.findViewById(R.id.edit_body);
     }
 
-    private void collectData() {
-        data.saveData(new DataHandler(label.getText().toString(),
+    private void addDataToList() {
+        newData = new DataHandler(label.getText().toString(),
                 description.getText().toString(),
                 date.getText().toString(),
-                body.getText().toString()));
+                body.getText().toString());
+        NotesListFragment fragment = NotesListFragment.newInstance(newData);
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commitAllowingStateLoss();
     }
 
 }

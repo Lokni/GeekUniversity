@@ -34,6 +34,14 @@ public class NotesListFragment extends Fragment implements Constants {
         // Required empty public constructor
     }
 
+    public static NotesListFragment newInstance(DataHandler data) {
+        NotesListFragment fragment = new NotesListFragment();
+        Bundle args = new Bundle();
+        args.putParcelable(YOUR_NOTES, data);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +83,12 @@ public class NotesListFragment extends Fragment implements Constants {
         decorator.setDrawable(getResources().getDrawable(R.drawable.separator, null));
         recyclerView.addItemDecoration(decorator);
 
+        if (getArguments() != null) {
+            data.saveData(getArguments().getParcelable(YOUR_NOTES));
+            adapter.notifyItemInserted(data.size() - 1);
+            recyclerView.scrollToPosition(data.size() - 1);
+        }
+
         adapter.setOnItemClickListener((view, position) -> {
             currentPosition = position;
             showNotes(currentPosition);
@@ -92,8 +106,6 @@ public class NotesListFragment extends Fragment implements Constants {
         switch (item.getItemId()) {
             case R.id.action_add:
                 callAddNote();
-                adapter.notifyItemInserted(data.size() - 1);
-                recyclerView.scrollToPosition(data.size() - 1);
                 return true;
 
             case R.id.action_clear:
