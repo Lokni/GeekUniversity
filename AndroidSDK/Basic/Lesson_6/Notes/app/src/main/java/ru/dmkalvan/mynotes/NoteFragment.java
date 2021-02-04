@@ -9,20 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 public class NoteFragment extends Fragment implements Constants {
 
     private TextView label, description, date, body;
-
-    private DataHandler noteData;
-    NotesListFragment position;
-    private DataSource dataSource;
 
     public NoteFragment() {
         // Required empty public constructor
@@ -79,7 +72,7 @@ public class NoteFragment extends Fragment implements Constants {
 
     private void populateView() {
         if (getArguments() != null) {
-            noteData = getArguments().getParcelable(YOUR_NOTES);
+            DataHandler noteData = getArguments().getParcelable(YOUR_NOTES);
             label.setText(noteData.getNoteLabel());
             description.setText(noteData.getNoteDescription());
             date.setText(noteData.getNoteDate());
