@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -47,10 +48,16 @@ public class AddNoteFragment extends Fragment implements Constants {
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.action_save) {
-            addDataToList();
-
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_save:
+                if (label.getText() != null || body.getText() != null) {
+                    addDataToList();
+                    Toast.makeText(getContext(), "Note saved", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            case R.id.action_clear:
+                clearNote();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -75,6 +82,13 @@ public class AddNoteFragment extends Fragment implements Constants {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commitAllowingStateLoss();
+    }
+
+    private void clearNote() {
+        label.setText(R.string.empty_string);
+        description.setText(R.string.empty_string);
+        date.setText(R.string.empty_string);
+        body.setText(R.string.empty_string);
     }
 
 }
