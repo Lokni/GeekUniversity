@@ -3,6 +3,7 @@ package ru.dmkalvan.mynotes;
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -76,7 +77,7 @@ public class NotesListFragment extends Fragment implements Constants {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new NoteListAdapter(data);
+        adapter = new NoteListAdapter(data, this);
         recyclerView.setAdapter(adapter);
 
         DividerItemDecoration decorator = new DividerItemDecoration(Objects.requireNonNull(getContext()), LinearLayoutManager.VERTICAL);
@@ -115,6 +116,27 @@ public class NotesListFragment extends Fragment implements Constants {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = requireActivity().getMenuInflater();
+        inflater.inflate(R.menu.context_menu, menu);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        int position = adapter.getMenuPosition();
+        switch (item.getItemId()) {
+            case R.id.action_edit:
+                showNotes(position);
+            case R.id.action_delete:
+                data.deleteData(position);
+                adapter.notifyItemRemoved(position);
+        }
+        return super.onContextItemSelected(item);
     }
 
     @Override

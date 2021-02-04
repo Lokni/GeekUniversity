@@ -4,12 +4,15 @@
     <string name="description_hint">Add description</string>
     <string name="date_hint">21.01.21</string>
     <string name="body_hint">Write here your notes.</string>
-
+    <!-- Technical text -->
+    <string name="empty_string" />
+    <!--  Menu text  -->
     <string name="add_note">Add note</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
     <string name="send_to">Send to…</string>
     <string name="clear">Clear</string>
+    <string name="delete">Delete</string>
     <!--  Arrays example data  -->
     <!--  Titles  -->
     <string name="shopping_list">Shopping list</string>
@@ -30,6 +33,6 @@
     </string>
     <string name="to_do_body">Lorem12</string>
     <string name="wedding_body">Lorem15</string>
-    <string name="empty_string" />
+
 
 </resources>

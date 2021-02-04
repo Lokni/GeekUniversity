@@ -1,12 +1,20 @@
 package ru.dmkalvan.mynotes;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class NoteFragment extends Fragment implements Constants {
 
@@ -40,6 +48,28 @@ public class NoteFragment extends Fragment implements Constants {
         return view;
     }
 
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.new_note_menu, menu);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_save:
+                if (label.getText() != null || body.getText() != null) {
+                    addDataToList();
+                    Toast.makeText(getContext(), "Note saved", Toast.LENGTH_SHORT).show();
+                }
+                return true;
+            case R.id.action_clear:
+                clearNote();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void initView(View view) {
         label = view.findViewById(R.id.note_label);
         description = view.findViewById(R.id.note_description);
@@ -56,6 +86,28 @@ public class NoteFragment extends Fragment implements Constants {
             date.setText(noteData.getNoteDate());
             body.setText(noteData.getNoteBody());
         }
+    }
+
+    private void addDataToList() {
+        noteData = new DataHandler(label.getText().toString(),
+                description.getText().toString(),
+                date.getText().toString(),
+                body.getText().toString());
+        NotesListFragment fragment = NotesListFragment.newInstance(noteData);
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction =
+                fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commitAllowingStateLoss();
+    }
+
+    private void clearNote() {
+        label.setText(R.string.empty_string);
+        description.setText(R.string.empty_string);
+        date.setText(R.string.empty_string);
+        body.setText(R.string.empty_string);
     }
 
 
