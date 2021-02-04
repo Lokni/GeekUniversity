@@ -21,6 +21,8 @@ public class NoteFragment extends Fragment implements Constants {
     private TextView label, description, date, body;
 
     private DataHandler noteData;
+    NotesListFragment position;
+    private DataSource dataSource;
 
     public NoteFragment() {
         // Required empty public constructor
@@ -45,6 +47,7 @@ public class NoteFragment extends Fragment implements Constants {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_note, container, false);
         initView(view);
+        setHasOptionsMenu(true);
         return view;
     }
 
@@ -58,10 +61,6 @@ public class NoteFragment extends Fragment implements Constants {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_save:
-                if (label.getText() != null || body.getText() != null) {
-                    addDataToList();
-                    Toast.makeText(getContext(), "Note saved", Toast.LENGTH_SHORT).show();
-                }
                 return true;
             case R.id.action_clear:
                 clearNote();
@@ -86,21 +85,6 @@ public class NoteFragment extends Fragment implements Constants {
             date.setText(noteData.getNoteDate());
             body.setText(noteData.getNoteBody());
         }
-    }
-
-    private void addDataToList() {
-        noteData = new DataHandler(label.getText().toString(),
-                description.getText().toString(),
-                date.getText().toString(),
-                body.getText().toString());
-        NotesListFragment fragment = NotesListFragment.newInstance(noteData);
-        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction =
-                fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        fragmentTransaction.commitAllowingStateLoss();
     }
 
     private void clearNote() {
