@@ -27,12 +27,10 @@
     <string name="date_2">25.01,21</string>
     <string name="date_3">26.01.21</string>
     <!--  Body  -->
-    <string name="shopping_list_body">1. Potato
-        2. Onion
-        3. Bread
-    </string>
+    <string name="shopping_list_body">1. Potato\n2. Onion\n3. Bread</string>
     <string name="to_do_body">Lorem12</string>
     <string name="wedding_body">Lorem15</string>
+    <string name="note_saved">Note saved</string>
 
 
 </resources>

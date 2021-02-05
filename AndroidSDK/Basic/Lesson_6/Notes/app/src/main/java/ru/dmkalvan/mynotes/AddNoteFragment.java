@@ -52,7 +52,7 @@ public class AddNoteFragment extends Fragment implements Constants {
             case R.id.action_save:
                 if (label.getText() != null || body.getText() != null) {
                     addDataToList();
-                    Toast.makeText(getContext(), "Note saved", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),String.valueOf(R.string.note_saved), Toast.LENGTH_SHORT).show();
                 }
                 return true;
             case R.id.action_clear:

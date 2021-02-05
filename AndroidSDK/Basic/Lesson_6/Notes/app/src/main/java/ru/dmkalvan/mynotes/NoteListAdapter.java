@@ -56,6 +56,9 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        private final int context_menu_coordinate_X = 10;
+        private final int context_menu_coordinate_Y = 10;
+
         private final TextView title;
         private final TextView description;
         private final LinearLayout card;
@@ -76,7 +79,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHo
 
             card.setOnLongClickListener(v -> {
                 menuPosition = getLayoutPosition();
-                itemView.showContextMenu(10, 10);
+                itemView.showContextMenu(context_menu_coordinate_X, context_menu_coordinate_Y);
                 return true;
             });
         }
