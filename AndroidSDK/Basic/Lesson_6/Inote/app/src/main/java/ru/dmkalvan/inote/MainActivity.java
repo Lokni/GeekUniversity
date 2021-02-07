@@ -10,8 +10,8 @@ import ru.dmkalvan.inote.ui.StartFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Navigation navigation;
     private final Publisher publisher = new Publisher();
+    private Navigation navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
