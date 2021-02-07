@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-<!--  Menu theme  -->
+    <!--  Menu theme  -->
     <style name="Theme.INote.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
