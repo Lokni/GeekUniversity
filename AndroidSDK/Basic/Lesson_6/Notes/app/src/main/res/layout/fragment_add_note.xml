@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_background"
+    android:orientation="vertical"
+    tools:context=".AddNoteFragment">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="@dimen/large_plus_fonts" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="@dimen/medium_plus_fonts" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="@dimen/small_plus_fonts" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="@dimen/medium_fonts" />
+
+</LinearLayout>
