@@ -21,13 +21,13 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 
+import ru.dmkalvan.inote.Constants;
 import ru.dmkalvan.inote.MainActivity;
 import ru.dmkalvan.inote.Navigation;
 import ru.dmkalvan.inote.R;
 
-public class StartFragment extends Fragment {
+public class StartFragment extends Fragment implements Constants {
 
-    private static final int RC_SIGN_IN = 40404;
     private static final String TAG = "GoogleAuth";
 
     private Navigation navigation;

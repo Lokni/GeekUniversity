@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import ru.dmkalvan.inote.Constants;
 import ru.dmkalvan.inote.MainActivity;
 import ru.dmkalvan.inote.Navigation;
 import ru.dmkalvan.inote.R;
@@ -27,9 +28,8 @@ import ru.dmkalvan.inote.data.NoteSource;
 import ru.dmkalvan.inote.data.NoteSourceFirebaseImpl;
 import ru.dmkalvan.inote.observe.Publisher;
 
-public class NoteListFragment extends Fragment {
+public class NoteListFragment extends Fragment implements Constants {
 
-    private static final int MY_DEFAULT_DURATION = 1000;
     private NoteSource data;
     private NoteListAdapter adapter;
     private RecyclerView recyclerView;

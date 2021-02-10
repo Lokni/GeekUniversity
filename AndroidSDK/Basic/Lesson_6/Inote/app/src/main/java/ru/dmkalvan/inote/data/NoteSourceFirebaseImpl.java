@@ -11,9 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class NoteSourceFirebaseImpl implements NoteSource {
+import ru.dmkalvan.inote.Constants;
 
-    private static final String NOTES_COLLECTION = "notes";
+public class NoteSourceFirebaseImpl implements NoteSource, Constants {
+
     private static final String TAG = "[NoteSourceFirebaseImpl]";
 
     private final FirebaseFirestore store = FirebaseFirestore.getInstance();

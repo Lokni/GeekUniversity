@@ -15,15 +15,13 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Calendar;
 import java.util.Date;
 
+import ru.dmkalvan.inote.Constants;
 import ru.dmkalvan.inote.MainActivity;
 import ru.dmkalvan.inote.R;
 import ru.dmkalvan.inote.data.NoteData;
 import ru.dmkalvan.inote.observe.Publisher;
 
-public class NoteFragment extends Fragment {
-
-    private static final String ARG_NOTE_DATA = "Param_NoteData";
-    private static final String DEFAULT_PARAMS = "Empty";
+public class NoteFragment extends Fragment implements Constants {
 
     private NoteData noteData;
     private Publisher publisher;

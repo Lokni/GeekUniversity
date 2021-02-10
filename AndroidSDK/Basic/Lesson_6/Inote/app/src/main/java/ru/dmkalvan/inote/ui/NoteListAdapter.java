@@ -13,14 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import ru.dmkalvan.inote.Constants;
 import ru.dmkalvan.inote.R;
 import ru.dmkalvan.inote.data.NoteData;
 import ru.dmkalvan.inote.data.NoteSource;
 
-public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHolder> {
-    private static final int X_POS = 10;
-    private static final int Y_POS = 10;
-
+public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHolder> implements Constants {
 
     private static final String TAG = "SocialNetworkAdapter";
     private final Fragment fragment;

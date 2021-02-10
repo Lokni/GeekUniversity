@@ -6,14 +6,15 @@ import android.icu.util.Calendar;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.dmkalvan.inote.Constants;
 import ru.dmkalvan.inote.R;
 
-public class NoteSourceImpl implements NoteSource {
+public class NoteSourceImpl implements NoteSource, Constants {
     private final List<NoteData> dataSource;
     private final Resources resources;
 
     public NoteSourceImpl(Resources resources) {
-        dataSource = new ArrayList<>(7);
+        dataSource = new ArrayList<>(DEFAULT_CAPACITY);
         this.resources = resources;
     }
 
