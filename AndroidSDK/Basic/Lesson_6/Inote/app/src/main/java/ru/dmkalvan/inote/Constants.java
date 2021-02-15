@@ -20,4 +20,9 @@ public interface Constants {
 
     // NotesSourceImplementation.
     int DEFAULT_CAPACITY = 7;
+
+    // Fragment dialog.
+    String FRAGMENT_DIALOG = "fragment_dialog";
+    String CANCELED = "Canceled";
+    String ACCEPTED = "Accepted";
 }

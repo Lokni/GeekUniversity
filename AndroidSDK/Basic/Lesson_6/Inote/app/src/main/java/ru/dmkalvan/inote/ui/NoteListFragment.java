@@ -26,6 +26,7 @@ import ru.dmkalvan.inote.Navigation;
 import ru.dmkalvan.inote.R;
 import ru.dmkalvan.inote.data.NoteSource;
 import ru.dmkalvan.inote.data.NoteSourceFirebaseImpl;
+import ru.dmkalvan.inote.observe.OnDialogListener;
 import ru.dmkalvan.inote.observe.Publisher;
 
 public class NoteListFragment extends Fragment implements Constants {
@@ -35,6 +36,7 @@ public class NoteListFragment extends Fragment implements Constants {
     private RecyclerView recyclerView;
     private Navigation navigation;
     private Publisher publisher;
+    int deletePosition;
 
     private boolean moveToFirstPosition;
 
@@ -153,15 +155,41 @@ public class NoteListFragment extends Fragment implements Constants {
                 });
                 return true;
             case R.id.action_delete:
-                int deletePosition = adapter.getMenuPosition();
-                data.deleteNoteData(deletePosition);
-                adapter.notifyItemRemoved(deletePosition);
+                deletePosition = adapter.getMenuPosition();
+                BottomDialogFragment delete = BottomDialogFragment.newInstance();
+                delete.setOnDialogListener(dialogListenerDelete);
+                delete.show(getChildFragmentManager(), FRAGMENT_DIALOG);
                 return true;
             case R.id.action_clear:
-                data.clearNoteData();
-                adapter.notifyDataSetChanged();
+                BottomDialogFragment clear = BottomDialogFragment.newInstance();
+                clear.setOnDialogListener(dialogListenerClear);
+                clear.show(getChildFragmentManager(), FRAGMENT_DIALOG);
                 return true;
         }
         return false;
     }
+    private final OnDialogListener dialogListenerDelete = new OnDialogListener() {
+        @Override
+        public void onDialogCancel() {
+            Toast.makeText(getContext(), CANCELED, Toast.LENGTH_SHORT).show();
+        }
+        @Override
+        public void onDialogAccept() {
+            data.deleteNoteData(deletePosition);
+            adapter.notifyItemRemoved(deletePosition);
+            Toast.makeText(getContext(), ACCEPTED, Toast.LENGTH_SHORT).show();
+        }
+    };
+    private final OnDialogListener dialogListenerClear = new OnDialogListener() {
+        @Override
+        public void onDialogCancel() {
+            Toast.makeText(getContext(), CANCELED, Toast.LENGTH_SHORT).show();
+        }
+        @Override
+        public void onDialogAccept() {
+            data.clearNoteData();
+            adapter.notifyDataSetChanged();
+            Toast.makeText(getContext(), ACCEPTED, Toast.LENGTH_SHORT).show();
+        }
+    };
 }
