@@ -5,6 +5,21 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * 1. Создать новый проект в Android Studio без поддержки Kotlin.
+ * 2. Сконфигурировать Kotlin в новом проекте (лучше вручную).
+ * 3. Перевести MainActivity на Kotlin.
+ * 4. Добавить кнопку в разметку и повесить на неё clickListener в Activity.
+ * 5. Потренироваться в создании классов и функций, описанных в уроке, и убедиться, что всё
+ *    работает. К примеру, создайте тестовое приложение:
+ *    a. создайте data class с двумя свойствами, выведите их на экран приложения;
+ *    b. создайте Object, в Object вызывайте copy и выводите значения скопированного класса на экран;
+ *    c. выводите значения из разных циклов в консоль, используя примеры из методических материалов.
+ *
+ * @author Dmitri Kalvan
+ * @date 21.02.21
+ */
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
