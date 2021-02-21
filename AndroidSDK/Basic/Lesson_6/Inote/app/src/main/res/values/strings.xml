@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">I note</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+    <string name="body">write your notice here</string>
+    <string name="sign_out">Sign out</string>
+    <string name="continue_">Continue</string>
+    <string name="textview">TextView</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="add">Add</string>
+    <string name="clear">Clear</string>
+    <string name="position_is">Position - %d</string>
+
+
+    <!-- Example arrays text -->
+    <string name="title1">Title 1</string>
+    <string name="title2">Title 2</string>
+    <string name="title3">Title 3</string>
+    <string name="title4">Title 4</string>
+    <string name="title5">Title 5</string>
+    <string name="title6">Title 6</string>
+    <string name="title7">Title 7</string>
+
+    <string name="description1">Description 1</string>
+    <string name="description2">Description 2</string>
+    <string name="description3">Description 3</string>
+    <string name="description4">Description 4</string>
+    <string name="description5">Description 5</string>
+    <string name="description6">Description 6</string>
+    <string name="description7">Description 7</string>
+
+    <string name="body1">body 1</string>
+    <string name="body2">body 2</string>
+    <string name="body3">body 3</string>
+    <string name="body4">body 4</string>
+    <string name="body5">body 5</string>
+    <string name="body6">body 6</string>
+    <string name="body7">body 7</string>
+    <string name="dialog_message">Alert!</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Accept</string>
+</resources>
