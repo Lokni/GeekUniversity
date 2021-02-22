@@ -1,6 +1,7 @@
 package ru.dmkalvan.weatherapp
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
  */
 
 class MainActivity : AppCompatActivity() {
+    val TAG = "cycles"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +30,16 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             changeText()
         }
+
+        for(i in 1..5){
+            Log.i(TAG, i.toString())
+        }
+
+        for (i in 5 downTo 0){
+            Log.i(TAG, i.toString())
+        }
+
+
     }
 
     private fun changeText() {
