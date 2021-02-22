@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import ru.dmkalvan.weatherapp.data.Weather
 
 /**
  * 1. Создать новый проект в Android Studio без поддержки Kotlin.
@@ -26,9 +27,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val weather = Weather("London", 23)
         val button = findViewById<Button>(R.id.any_button)
         button.setOnClickListener {
             changeText()
+            setWeatherOnScreen(weather)
         }
 
         for(i in 1..5){
@@ -40,11 +43,21 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
+
     }
 
     private fun changeText() {
         val textView = findViewById<TextView>(R.id.text_view)
         textView.text = getString(R.string.changed_text)
 
+    }
+
+    private fun setWeatherOnScreen(weather: Weather){
+        val city = findViewById<TextView>(R.id.city_name)
+        val temperature = findViewById<TextView>(R.id.temperature)
+
+        city.text = weather.town
+        temperature.text = weather.temperature.toString()
     }
 }
