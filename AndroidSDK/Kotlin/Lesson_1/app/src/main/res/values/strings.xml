@@ -57,4 +57,7 @@
     <string name="thunderstorm_with_hail">Thunderstorm with hail</string>
     <string name="sunday">Sunday</string>
 
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="city_name_example">City name</string>
+
 </resources>

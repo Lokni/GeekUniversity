@@ -49,4 +49,5 @@
     <string name="thunderstorm">Гроза</string>
     <string name="thunderstorm_with_rain">Гроза с дождём</string>
     <string name="thunderstorm_with_hail">Гроза с градом</string>
+    <string name="city_name_example">City name</string>
 </resources>
