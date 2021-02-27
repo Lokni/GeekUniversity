@@ -10,18 +10,18 @@
     <!--  General parameters text  -->
     <string name="celsius" translatable="false">%d°C</string>
     <string name="fahrenheit" translatable="false">%d°F</string>
-    <string name="minimum">Min.:/n%d</string>
-    <string name="maximum">Max.:/n%d</string>
-    <string name="sunset">Sunset:/n%d</string>
-    <string name="sunrise">Sunrise:/n%d</string>
-    <string name="wind">Wind:/n%s</string>
-    <string name="humidity">Humidity:/n%d</string>
-    <string name="pressure">Pressure:/n%d</string>
-    <string name="visibility">Visibility:/n%d</string>
-    <string name="precipitation">Precipitation:/n%.2f</string>
-    <string name="chance_of_precipitation">Chance of precipitation:/n%d%</string>
-    <string name="feels_like">Feels like:</string>
-    <string name="uv_index">UV Index:</string>
+    <string name="minimum">Min.:%d</string>
+    <string name="maximum">Max.:/n %d</string>
+    <string name="sunset">Sunset:/n %d</string>
+    <string name="sunrise">Sunrise:/n %d</string>
+    <string name="wind">Wind:/n %s</string>
+    <string name="humidity">Humidity:/n %d</string>
+    <string name="pressure">Pressure:/n %d</string>
+    <string name="visibility">Visibility:/n %d</string>
+    <string name="precipitation">Precipitation:/n %.2f</string>
+    <string name="chance_of_precipitation">Chance of precipitation:/n %d%</string>
+    <string name="feels_like">Feels like: %d</string>
+    <string name="uv_index">UV Index: %d</string>
     <string name="south">S</string>
     <string name="north">N</string>
     <string name="west">W</string>
