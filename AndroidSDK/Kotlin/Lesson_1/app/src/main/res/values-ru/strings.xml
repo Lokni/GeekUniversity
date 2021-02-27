@@ -50,4 +50,6 @@
     <string name="thunderstorm_with_rain">Гроза с дождём</string>
     <string name="thunderstorm_with_hail">Гроза с градом</string>
     <string name="city_name_example">City name</string>
+    <string name="error">Ошибка</string>
+    <string name="reload">Перезагрузка</string>
 </resources>

@@ -1,11 +1,7 @@
 package ru.dmkalvan.weatherapp
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import ru.dmkalvan.weatherapp.data.Weather
 import ru.dmkalvan.weatherapp.ui.WeatherCardFragment
 
 /**
