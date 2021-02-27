@@ -23,10 +23,6 @@ class WeatherCardFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-                WeatherCardFragment().apply {
-                    arguments = Bundle().apply {
-                    }
-                }
+        fun newInstance() = WeatherCardFragment()
     }
 }
