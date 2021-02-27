@@ -54,20 +54,20 @@ class WeatherCardFragment : Fragment() {
 
     private fun setData(weatherData: Weather) {
         binding.cityName.text = weatherData.city.city
-        binding.currentTemperature.text = String().format(getString(R.string.celsius), weatherData.temperature)
+        binding.currentTemperature.text = String.format(getString(R.string.celsius), weatherData.temperature)
         binding.currentWeather.text = weatherData.weather
-        binding.minimalTemperature.text = String().format(getString(R.string.minimum), weatherData.minimalTemp)
-        binding.maximalTemperature.text = String().format(getString(R.string.maximum), weatherData.maximalTemp)
-        binding.sunriseTime.text = String().format(getString(R.string.sunrise), weatherData.sunrise)
-        binding.sunsetTime.text = String().format(getString(R.string.sunset), weatherData.sunset)
-        binding.chancePrecipitation.text = String().format(getString(R.string.chance_of_precipitation), weatherData.chanceOfPrecipitation)
-        binding.feelsLike.text = String().format(getString(R.string.feels_like), weatherData.feelsLike)
-        binding.humidity.text = String().format(getString(R.string.humidity), weatherData.humidity)
-        binding.wind.text = String().format(getString(R.string.wind), weatherData.wind)
-        binding.precipitation.text = String().format(getString(R.string.precipitation), weatherData.precipitation)
-        binding.pressure.text = String().format(getString(R.string.pressure), weatherData.pressure)
-        binding.visibility.text = String().format(getString(R.string.visibility), weatherData.visibility)
-        binding.uvIndex.text = String().format(getString(R.string.uv_index), weatherData.uvIndex)
+        binding.minimalTemperature.text = String.format(getString(R.string.minimum), weatherData.minimalTemp)
+        binding.maximalTemperature.text = String.format(getString(R.string.maximum), weatherData.maximalTemp)
+        binding.sunriseTime.text = String.format(getString(R.string.sunrise), weatherData.sunrise)
+        binding.sunsetTime.text = String.format(getString(R.string.sunset), weatherData.sunset)
+        binding.chancePrecipitation.text = String.format(getString(R.string.chance_of_precipitation), weatherData.chanceOfPrecipitation)
+        binding.feelsLike.text = String.format(getString(R.string.feels_like), weatherData.feelsLike)
+        binding.humidity.text = String.format(getString(R.string.humidity), weatherData.humidity)
+        binding.wind.text = String.format(getString(R.string.wind), weatherData.wind)
+        binding.precipitation.text = String.format(getString(R.string.precipitation), weatherData.precipitation)
+        binding.pressure.text = String.format(getString(R.string.pressure), weatherData.pressure)
+        binding.visibility.text = String.format(getString(R.string.visibility), weatherData.visibility)
+        binding.uvIndex.text = String.format(getString(R.string.uv_index), weatherData.uvIndex)
 
     }
 
