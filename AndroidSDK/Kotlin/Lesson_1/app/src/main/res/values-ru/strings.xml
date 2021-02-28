@@ -52,4 +52,5 @@
     <string name="city_name_example">City name</string>
     <string name="error">Ошибка</string>
     <string name="reload">Перезагрузка</string>
+    <string name="now">Now</string>
 </resources>

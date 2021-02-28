@@ -8,4 +8,8 @@ class RepositoryImpl: Repository {
     override fun getWeatherFromLocalDB(): Weather {
         return Weather()
     }
+
+    override fun size(): Int {
+        return 25
+    }
 }

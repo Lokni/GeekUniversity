@@ -61,5 +61,6 @@
     <string name="city_name_example">City name</string>
     <string name="error">Error</string>
     <string name="reload">Reload</string>
+    <string name="now">Now</string>
 
 </resources>

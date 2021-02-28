@@ -1,11 +1,14 @@
 package ru.dmkalvan.weatherapp.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import ru.dmkalvan.weatherapp.R
 import ru.dmkalvan.weatherapp.data.Weather
@@ -16,6 +19,7 @@ class WeatherCardFragment : Fragment() {
     private var _binding: FragmentWeatherCardBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: MainViewModel
+    private lateinit var hourlyAdapter: HourlyRecyclerViewAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -69,6 +73,16 @@ class WeatherCardFragment : Fragment() {
         binding.visibility.text = String.format(getString(R.string.visibility), weatherData.visibility)
         binding.uvIndex.text = String.format(getString(R.string.uv_index), weatherData.uvIndex)
 
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    fun initHourlyList() {
+        binding.hourlyWeatherList.setHasFixedSize(true)
+        hourlyAdapter = HourlyRecyclerViewAdapter(this)
+        binding.hourlyWeatherList.adapter
+        val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL)
+        itemDecoration.setDrawable(resources.getDrawable(R.drawable.separator, null))
+        binding.hourlyWeatherList.addItemDecoration(itemDecoration)
     }
 
     override fun onDestroyView() {
