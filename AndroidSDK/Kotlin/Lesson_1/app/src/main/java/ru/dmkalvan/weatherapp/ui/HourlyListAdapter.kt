@@ -11,7 +11,7 @@ import ru.dmkalvan.weatherapp.data.Repository
 import ru.dmkalvan.weatherapp.data.Weather
 import ru.dmkalvan.weatherapp.databinding.HourlyViewItemBinding
 
-class HourlyRecyclerViewAdapter(private val fragment: Fragment) : RecyclerView.Adapter<HourlyRecyclerViewAdapter.ViewHolder>() {
+class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<HourlyListAdapter.ViewHolder>() {
 
     private val TAG = "Hourly view adapter"
     private val weather = Weather()

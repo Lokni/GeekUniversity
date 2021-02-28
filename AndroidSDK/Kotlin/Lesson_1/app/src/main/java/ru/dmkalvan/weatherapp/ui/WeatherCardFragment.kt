@@ -21,7 +21,7 @@ class WeatherCardFragment : Fragment() {
     private var _binding: FragmentWeatherCardBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: MainViewModel
-    private lateinit var hourlyAdapter: HourlyRecyclerViewAdapter
+    private lateinit var hourlyAdapter: HourlyListAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -81,7 +81,7 @@ class WeatherCardFragment : Fragment() {
     @SuppressLint("UseCompatLoadingForDrawables")
     fun initHourlyList() {
         binding.hourlyWeatherList.setHasFixedSize(true)
-        hourlyAdapter = HourlyRecyclerViewAdapter(this)
+        hourlyAdapter = HourlyListAdapter(this)
         binding.hourlyWeatherList.adapter
 
         // Set separation line
