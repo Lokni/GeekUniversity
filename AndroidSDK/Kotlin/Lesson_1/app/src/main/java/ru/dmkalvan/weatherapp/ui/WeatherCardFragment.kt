@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +17,7 @@ import ru.dmkalvan.weatherapp.databinding.FragmentWeatherCardBinding
 
 class WeatherCardFragment : Fragment() {
 
+    private val MY_DEFAULT_DURATION = 1000
     private var _binding: FragmentWeatherCardBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: MainViewModel
@@ -24,7 +26,6 @@ class WeatherCardFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         _binding = FragmentWeatherCardBinding.inflate(inflater, container, false)
-
         return binding.root
     }
 
@@ -41,6 +42,7 @@ class WeatherCardFragment : Fragment() {
                 val weatherData = appState.weatherData
                 binding.loadingLayout.visibility = View.GONE
                 setData(weatherData)
+                initHourlyList()
             }
             is AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
@@ -73,6 +75,7 @@ class WeatherCardFragment : Fragment() {
         binding.visibility.text = String.format(getString(R.string.visibility), weatherData.visibility)
         binding.uvIndex.text = String.format(getString(R.string.uv_index), weatherData.uvIndex)
 
+
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -80,9 +83,18 @@ class WeatherCardFragment : Fragment() {
         binding.hourlyWeatherList.setHasFixedSize(true)
         hourlyAdapter = HourlyRecyclerViewAdapter(this)
         binding.hourlyWeatherList.adapter
+
+        // Set separation line
         val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL)
         itemDecoration.setDrawable(resources.getDrawable(R.drawable.separator, null))
         binding.hourlyWeatherList.addItemDecoration(itemDecoration)
+
+
+        // Set animation
+        val animator = DefaultItemAnimator()
+        animator.addDuration = MY_DEFAULT_DURATION.toLong()
+        animator.removeDuration = MY_DEFAULT_DURATION.toLong()
+        binding.hourlyWeatherList.itemAnimator = animator
     }
 
     override fun onDestroyView() {
