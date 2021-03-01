@@ -22,6 +22,7 @@ class WeatherCardFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel: MainViewModel
     private lateinit var hourlyAdapter: HourlyListAdapter
+    private lateinit var dailyAdapter: DailyListAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -43,6 +44,7 @@ class WeatherCardFragment : Fragment() {
                 binding.loadingLayout.visibility = View.GONE
                 setData(weatherData)
                 initHourlyList()
+                initDailyList()
             }
             is AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
@@ -81,8 +83,10 @@ class WeatherCardFragment : Fragment() {
     @SuppressLint("UseCompatLoadingForDrawables")
     fun initHourlyList() {
         binding.hourlyWeatherList.setHasFixedSize(true)
+        val hourlyLayoutManager = LinearLayoutManager(context)
+        binding.hourlyWeatherList.layoutManager = hourlyLayoutManager
         hourlyAdapter = HourlyListAdapter(this)
-        binding.hourlyWeatherList.adapter
+        binding.hourlyWeatherList.adapter = hourlyAdapter
 
         // Set separation line
         val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL)
@@ -95,6 +99,26 @@ class WeatherCardFragment : Fragment() {
         animator.addDuration = MY_DEFAULT_DURATION.toLong()
         animator.removeDuration = MY_DEFAULT_DURATION.toLong()
         binding.hourlyWeatherList.itemAnimator = animator
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    fun initDailyList() {
+        binding.weekDays.setHasFixedSize(true)
+        val dailyLayoutManager = LinearLayoutManager(context)
+        binding.weekDays.layoutManager = dailyLayoutManager
+        dailyAdapter = DailyListAdapter(this)
+        binding.weekDays.adapter = dailyAdapter
+
+        // Set separation line
+        val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
+        itemDecoration.setDrawable(resources.getDrawable(R.drawable.separator, null))
+        binding.weekDays.addItemDecoration(itemDecoration)
+
+        // Set animation
+        val animator = DefaultItemAnimator()
+        animator.addDuration = MY_DEFAULT_DURATION.toLong()
+        animator.removeDuration = MY_DEFAULT_DURATION.toLong()
+        binding.weekDays.itemAnimator = animator
     }
 
     override fun onDestroyView() {

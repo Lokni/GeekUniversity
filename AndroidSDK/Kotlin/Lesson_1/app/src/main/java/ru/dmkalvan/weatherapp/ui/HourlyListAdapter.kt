@@ -15,11 +15,6 @@ class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<H
 
     private val TAG = "Hourly view adapter"
     private val weather = Weather()
-    private lateinit var dataSource: Repository
-
-    fun setDataSource(dataSource: Repository) {
-        this.dataSource = dataSource
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.hourly_view_item, parent, false)
@@ -33,12 +28,13 @@ class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<H
     }
 
     override fun getItemCount(): Int {
-        return dataSource.size()
+        return 24
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var _binding: HourlyViewItemBinding? = null
         private val binding get() = _binding!!
+
 
         fun setData(weather: Weather) {
             binding.hourlyTime.text = weather.sunrise.toString()

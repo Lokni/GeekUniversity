@@ -84,12 +84,12 @@
             android:layout_marginTop="@dimen/margin_5"
             android:background="@color/black" />
 
-        <!--        <androidx.recyclerview.widget.RecyclerView-->
-        <!--            android:id="@+id/week_days"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="@dimen/margin_5"-->
-        <!--            android:orientation="vertical" />-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/week_days"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_5"
+            android:orientation="vertical" />
 
         <View
             android:layout_width="match_parent"
