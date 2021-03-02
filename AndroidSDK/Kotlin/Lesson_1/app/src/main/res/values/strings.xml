@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name" translatable="false">Weather App</string>
+    <string name="push_me" translatable="false">Push Me</string>
+    <string name="changed_text" translatable="false">button was pressed</string>
+    <!--  Main options text  -->
+    <string name="city_list">City list</string>
+    <string name="add">Add</string>
+    <string name="remove">Remove</string>
+    <string name="to_web">To Website</string>
+    <!--  General parameters text  -->
+    <string name="celsius" translatable="false">%d°C</string>
+    <string name="fahrenheit" translatable="false">%d°F</string>
+    <string name="minimum">Min.:%d </string>
+    <string name="maximum"> Max.:%d</string>
+    <string name="sunset">Sunset:\n %.2f</string>
+    <string name="sunrise">Sunrise:\n %.2f</string>
+    <string name="wind">Wind:\n %s</string>
+    <string name="humidity">Humidity:\n %d</string>
+    <string name="pressure">Pressure:\n %d hPa</string>
+    <string name="visibility">Visibility:\n %d</string>
+    <string name="precipitation">Precipitation:\n %.1f cm</string>
+    <string name="chance_of_precipitation">Chance of precipitation:\n %d</string>
+    <string name="feels_like">Feels like:\n %d</string>
+    <string name="uv_index">UV Index:\n %d</string>
+    <string name="south">S</string>
+    <string name="north">N</string>
+    <string name="west">W</string>
+    <string name="east">E</string>
+    <string name="speed">m/s</string>
+    <string name="hpa">hPa</string>
+    <string name="mm_hg">mm Hg</string>
+    <!--  Weekdays  -->
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <!--  Weather  -->
+    <string name="clear">Clear</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="partly_cloudy">Partly-cloudy</string>
+    <string name="overcast">Overcast</string>
+    <string name="drizzle">Drizzle</string>
+    <string name="light_rain">Light rain</string>
+    <string name="rain">Rain</string>
+    <string name="moderate_rain">Moderate rain</string>
+    <string name="heavy_rain">Heavy rain</string>
+    <string name="continuous_heavy_rain">Continuous heavy rain</string>
+    <string name="showers">Showers</string>
+    <string name="wet_snow">Wet snow</string>
+    <string name="snow">Snow</string>
+    <string name="snow_showers">Snow showers</string>
+    <string name="hail">Hail</string>
+    <string name="thunderstorm">Thunderstorm</string>
+    <string name="thunderstorm_with_rain">Thunderstorm with rain</string>
+    <string name="thunderstorm_with_hail">Thunderstorm with hail</string>
+    <string name="sunday">Sunday</string>
+
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="city_name_example">City name</string>
+    <string name="error">Error</string>
+    <string name="reload">Reload</string>
+    <string name="now">Now</string>
+    <string name="weather_icon" translatable="false">weather icon</string>
+
+</resources>
