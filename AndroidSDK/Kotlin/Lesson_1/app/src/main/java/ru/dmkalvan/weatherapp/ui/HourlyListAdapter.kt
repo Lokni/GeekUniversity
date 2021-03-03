@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.dmkalvan.weatherapp.R
+import ru.dmkalvan.weatherapp.data.DailyForecast
 import ru.dmkalvan.weatherapp.data.HourlyForecast
 import ru.dmkalvan.weatherapp.data.Repository
 import ru.dmkalvan.weatherapp.data.Weather
@@ -15,7 +16,13 @@ import ru.dmkalvan.weatherapp.databinding.HourlyViewItemBinding
 class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<HourlyListAdapter.ViewHolder>() {
 
     private val TAG = "Hourly view adapter"
-    private val weather = Weather()
+
+    private var weatherData: List<HourlyForecast> = listOf()
+
+    fun setWeather(data: List<HourlyForecast>) {
+        weatherData = data
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.hourly_view_item, parent, false)
@@ -24,7 +31,7 @@ class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<H
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.setData(weather)
+        holder.setData(weatherData[position])
         Log.d(TAG, "onBindViewHolder")
     }
 
@@ -32,17 +39,13 @@ class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<H
         return 24
     }
 
-    fun setWeather(data: List<HourlyForecast>) {
-        TODO("Not yet implemented")
-    }
-
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var _binding: HourlyViewItemBinding? = null
         private val binding get() = _binding!!
 
 
-        fun setData(weather: Weather) {
-            binding.hourlyTime.text = weather.sunrise.toString()
+        fun setData(weather: HourlyForecast) {
+            binding.hourlyTime.text = weather.hour.toString()
             binding.hourlyIcon.setImageResource(R.drawable.ic_launcher_background)
             binding.hourlyTemperature.text = weather.temperature.toString()
         }

@@ -31,7 +31,7 @@ class DailyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<Da
     }
 
     override fun getItemCount(): Int {
-        return 7
+        return weatherData.size
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
