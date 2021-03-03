@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import ru.dmkalvan.weatherapp.R
+import ru.dmkalvan.weatherapp.data.DailyForecast
+import ru.dmkalvan.weatherapp.data.HourlyForecast
 import ru.dmkalvan.weatherapp.data.Weather
 import ru.dmkalvan.weatherapp.databinding.FragmentWeatherCardBinding
 
@@ -40,11 +42,10 @@ class WeatherCardFragment : Fragment() {
     private fun renderData(appState: AppState) {
         when (appState) {
             is AppState.Success -> {
-                val weatherData = appState.weatherData
                 binding.loadingLayout.visibility = View.GONE
-                setData(weatherData)
-                initHourlyList()
-                initDailyList()
+                setData(appState.weatherData)
+                initHourlyList(appState.hourlyWeatherData)
+                initDailyList(appState.dailyWeatherData)
             }
             is AppState.Loading -> {
                 binding.loadingLayout.visibility = View.VISIBLE
@@ -81,12 +82,13 @@ class WeatherCardFragment : Fragment() {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    fun initHourlyList() {
+    fun initHourlyList(data: List<HourlyForecast>) {
         binding.hourlyWeatherList.setHasFixedSize(true)
         val hourlyLayoutManager = LinearLayoutManager(context)
         binding.hourlyWeatherList.layoutManager = hourlyLayoutManager
         hourlyAdapter = HourlyListAdapter(this)
         binding.hourlyWeatherList.adapter = hourlyAdapter
+        hourlyAdapter.setWeather(data)
 
         // Set separation line
         val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL)
@@ -102,12 +104,13 @@ class WeatherCardFragment : Fragment() {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    fun initDailyList() {
+    fun initDailyList(data: List<DailyForecast>) {
         binding.weekDays.setHasFixedSize(true)
         val dailyLayoutManager = LinearLayoutManager(context)
         binding.weekDays.layoutManager = dailyLayoutManager
         dailyAdapter = DailyListAdapter(this)
         binding.weekDays.adapter = dailyAdapter
+        dailyAdapter.setWeather(data)
 
         // Set separation line
         val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)

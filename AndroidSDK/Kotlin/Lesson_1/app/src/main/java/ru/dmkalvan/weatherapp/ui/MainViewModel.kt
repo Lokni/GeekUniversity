@@ -2,13 +2,14 @@ package ru.dmkalvan.weatherapp.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ru.dmkalvan.weatherapp.data.Repository
-import ru.dmkalvan.weatherapp.data.RepositoryImpl
+import ru.dmkalvan.weatherapp.data.*
 import java.lang.Thread.sleep
 
 class MainViewModel(
         private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData(),
-        private val repositoryImpl: Repository = RepositoryImpl()) : ViewModel() {
+        private val repositoryImpl: Repository = RepositoryImpl(),
+private val hourlyForecast: Forecast = ForecastImpl(),
+private val dailyForecast: Forecast = ForecastImpl()) : ViewModel() {
 
     fun getLiveData() = liveDataToObserve
 
@@ -20,7 +21,9 @@ class MainViewModel(
         liveDataToObserve.value = AppState.Loading
         Thread {
             sleep(300)
-            liveDataToObserve.postValue(AppState.Success(repositoryImpl.getWeatherFromLocalDB()))
+            liveDataToObserve.postValue(AppState.Success(repositoryImpl.getWeatherFromLocalDB(),
+                    dailyForecast.getDailyForecast(),
+                    hourlyForecast.getHourlyForecast()))
         }.start()
     }
 

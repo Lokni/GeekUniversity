@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.dmkalvan.weatherapp.R
+import ru.dmkalvan.weatherapp.data.HourlyForecast
 import ru.dmkalvan.weatherapp.data.Repository
 import ru.dmkalvan.weatherapp.data.Weather
 import ru.dmkalvan.weatherapp.databinding.HourlyViewItemBinding
@@ -31,7 +32,11 @@ class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<H
         return 24
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    fun setWeather(data: List<HourlyForecast>) {
+        TODO("Not yet implemented")
+    }
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private var _binding: HourlyViewItemBinding? = null
         private val binding get() = _binding!!
 
