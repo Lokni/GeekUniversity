@@ -1,6 +1,6 @@
 package ru.dmkalvan.weatherapp.data
 
 interface Forecast {
-    fun getDailyForecast(): List<DailyForecast>
-    fun getHourlyForecast(): List<HourlyForecast>
+    fun getDailyData(): List<DailyForecast>
+    fun getHourlyData(): List<HourlyForecast>
 }

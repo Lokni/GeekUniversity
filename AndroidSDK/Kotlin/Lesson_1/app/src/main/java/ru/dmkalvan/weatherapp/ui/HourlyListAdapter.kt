@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.dmkalvan.weatherapp.R
-import ru.dmkalvan.weatherapp.data.DailyForecast
 import ru.dmkalvan.weatherapp.data.HourlyForecast
-import ru.dmkalvan.weatherapp.data.Repository
-import ru.dmkalvan.weatherapp.data.Weather
 import ru.dmkalvan.weatherapp.databinding.HourlyViewItemBinding
 
 class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<HourlyListAdapter.ViewHolder>() {
@@ -36,7 +33,7 @@ class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<H
     }
 
     override fun getItemCount(): Int {
-        return 24
+        return weatherData.size
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
