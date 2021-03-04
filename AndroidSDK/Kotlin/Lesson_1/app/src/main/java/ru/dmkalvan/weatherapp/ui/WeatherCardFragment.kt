@@ -44,16 +44,16 @@ class WeatherCardFragment : Fragment() {
     private fun renderData(appState: AppState) {
         when (appState) {
             is AppState.Success -> {
-                binding.loadingLayout.visibility = View.GONE
+//                binding.loadingLayout.visibility = View.GONE
                 setData(appState.weatherData)
                 initHourlyList(appState.hourlyWeatherData)
                 initDailyList(appState.dailyWeatherData)
             }
             is AppState.Loading -> {
-                binding.loadingLayout.visibility = View.VISIBLE
+//                binding.loadingLayout.visibility = View.VISIBLE
             }
             is AppState.Error -> {
-                binding.loadingLayout.visibility = View.GONE
+//                binding.loadingLayout.visibility = View.GONE
                 Snackbar
                         .make(binding.weatherCardList, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
                         .setAction(getString(R.string.reload)) { viewModel.getWeatherFromLocalSource() }
@@ -87,6 +87,7 @@ class WeatherCardFragment : Fragment() {
     fun initHourlyList(data: List<HourlyForecast>) {
         binding.hourlyWeatherList.setHasFixedSize(true)
         val hourlyLayoutManager = LinearLayoutManager(context)
+        hourlyLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         binding.hourlyWeatherList.layoutManager = hourlyLayoutManager
         hourlyAdapter = HourlyListAdapter(this)
         binding.hourlyWeatherList.adapter = hourlyAdapter

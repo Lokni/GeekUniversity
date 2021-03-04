@@ -3,12 +3,12 @@ package ru.dmkalvan.weatherapp.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.dmkalvan.weatherapp.R
 import ru.dmkalvan.weatherapp.data.DailyForecast
-import ru.dmkalvan.weatherapp.databinding.DailyViewItemBinding
 
 class DailyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<DailyListAdapter.ViewHolder>() {
 
@@ -34,14 +34,12 @@ class DailyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<Da
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private var _binding: DailyViewItemBinding? = null
-        private val binding get() = _binding!!
 
-        fun setData(weather: DailyForecast){
-            binding.weekDay.text = weather.dayOfWeek.toString()
-            binding.dailyWeatherIcon.setImageResource(R.drawable.ic_launcher_foreground)
-            binding.dailyTemperature.text = String.format(R.string.maximum.toString(), weather.tempMaximum)
-            binding.dailyNightTemperature.text = String.format(R.string.celsius.toString(), weather.tempMinimum)
+        fun setData(weather: DailyForecast) {
+            itemView.findViewById<TextView>(R.id.week_day).text = weather.dayOfWeek.toString()
+            itemView.findViewById<ImageView>(R.id.daily_weather_icon).setImageResource(R.drawable.ic_launcher_foreground)
+            itemView.findViewById<TextView>(R.id.daily_temperature).text = weather.tempMaximum.toString()
+            itemView.findViewById<TextView>(R.id.daily_night_temperature).text = weather.tempMinimum.toString()
 
         }
 

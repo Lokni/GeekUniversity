@@ -4,11 +4,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.dmkalvan.weatherapp.R
 import ru.dmkalvan.weatherapp.data.HourlyForecast
-import ru.dmkalvan.weatherapp.databinding.HourlyViewItemBinding
 
 class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<HourlyListAdapter.ViewHolder>() {
 
@@ -37,14 +38,11 @@ class HourlyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<H
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private var _binding: HourlyViewItemBinding? = null
-        private val binding get() = _binding!!
-
 
         fun setData(weather: HourlyForecast) {
-            binding.hourlyTime.text = weather.hour.toString()
-            binding.hourlyIcon.setImageResource(R.drawable.ic_launcher_background)
-            binding.hourlyTemperature.text = weather.temperature.toString()
+            itemView.findViewById<TextView>(R.id.hourly_time).text = weather.hour.toString()
+            itemView.findViewById<ImageView>(R.id.hourly_icon).setImageResource(R.drawable.ic_launcher_foreground)
+            itemView.findViewById<TextView>(R.id.hourly_temperature).text = weather.temperature.toString()
         }
 
     }
