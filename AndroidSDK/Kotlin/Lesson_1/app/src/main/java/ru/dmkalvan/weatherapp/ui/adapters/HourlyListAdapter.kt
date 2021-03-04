@@ -1,4 +1,4 @@
-package ru.dmkalvan.weatherapp.ui
+package ru.dmkalvan.weatherapp.ui.adapters
 
 import android.util.Log
 import android.view.LayoutInflater

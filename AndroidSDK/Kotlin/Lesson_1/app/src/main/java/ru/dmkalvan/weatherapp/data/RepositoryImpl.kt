@@ -9,7 +9,4 @@ class RepositoryImpl: Repository {
         return Weather()
     }
 
-    override fun size(): Int {
-        return 25
-    }
 }

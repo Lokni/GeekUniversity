@@ -1,4 +1,4 @@
-package ru.dmkalvan.weatherapp.ui
+package ru.dmkalvan.weatherapp.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.dmkalvan.weatherapp.R
 import ru.dmkalvan.weatherapp.data.DailyForecast
-import ru.dmkalvan.weatherapp.data.Weather
 import ru.dmkalvan.weatherapp.databinding.DailyViewItemBinding
 
 class DailyListAdapter(private val fragment: Fragment) : RecyclerView.Adapter<DailyListAdapter.ViewHolder>() {

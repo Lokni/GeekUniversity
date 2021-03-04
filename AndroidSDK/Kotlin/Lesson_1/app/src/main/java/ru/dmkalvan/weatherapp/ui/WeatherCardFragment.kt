@@ -16,6 +16,8 @@ import ru.dmkalvan.weatherapp.data.DailyForecast
 import ru.dmkalvan.weatherapp.data.HourlyForecast
 import ru.dmkalvan.weatherapp.data.Weather
 import ru.dmkalvan.weatherapp.databinding.FragmentWeatherCardBinding
+import ru.dmkalvan.weatherapp.ui.adapters.DailyListAdapter
+import ru.dmkalvan.weatherapp.ui.adapters.HourlyListAdapter
 
 class WeatherCardFragment : Fragment() {
 
