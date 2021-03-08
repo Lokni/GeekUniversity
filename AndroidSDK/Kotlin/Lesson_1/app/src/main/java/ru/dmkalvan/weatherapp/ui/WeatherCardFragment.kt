@@ -1,10 +1,10 @@
 package ru.dmkalvan.weatherapp.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -15,6 +15,7 @@ import ru.dmkalvan.weatherapp.R
 import ru.dmkalvan.weatherapp.data.DailyForecast
 import ru.dmkalvan.weatherapp.data.HourlyForecast
 import ru.dmkalvan.weatherapp.data.Weather
+import ru.dmkalvan.weatherapp.data.getDefaultCity
 import ru.dmkalvan.weatherapp.databinding.FragmentWeatherCardBinding
 import ru.dmkalvan.weatherapp.ui.adapters.DailyListAdapter
 import ru.dmkalvan.weatherapp.ui.adapters.HourlyListAdapter
@@ -130,6 +131,31 @@ class WeatherCardFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return onItemSelected(item.itemId) || super.onOptionsItemSelected(item)
+    }
+
+    private fun onItemSelected(itemId: Int): Boolean {
+        return when (itemId) {
+            R.id.to_web -> {
+                val url = String.format("https://yandex.eu/weather/%s", getDefaultCity().city)
+                val webpage: Uri = Uri.parse(url)
+                val intent = Intent(Intent.ACTION_VIEW, webpage)
+                startActivity(intent)
+                true
+            }
+            R.id.to_city_list -> {
+                true
+            }
+
+            else -> return false
+        }
     }
 
     companion object {
