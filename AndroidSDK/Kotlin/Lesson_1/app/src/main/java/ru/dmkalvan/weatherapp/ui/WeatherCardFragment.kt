@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -45,16 +46,13 @@ class WeatherCardFragment : Fragment() {
     private fun renderData(appState: AppState) {
         when (appState) {
             is AppState.Success -> {
-//                binding.loadingLayout.visibility = View.GONE
                 setData(appState.weatherData)
                 initHourlyList(appState.hourlyWeatherData)
                 initDailyList(appState.dailyWeatherData)
             }
-            is AppState.Loading -> {
-//                binding.loadingLayout.visibility = View.VISIBLE
-            }
+            is AppState.Loading -> Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
             is AppState.Error -> {
-//                binding.loadingLayout.visibility = View.GONE
+
                 Snackbar
                         .make(binding.weatherCardList, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
                         .setAction(getString(R.string.reload)) { viewModel.getWeatherFromLocalSource() }
@@ -151,6 +149,7 @@ class WeatherCardFragment : Fragment() {
                 true
             }
             R.id.to_city_list -> {
+
                 true
             }
 
@@ -159,7 +158,13 @@ class WeatherCardFragment : Fragment() {
     }
 
     companion object {
+        const val BUNDLE_EXTRA = "weather data"
+
         @JvmStatic
-        fun newInstance() = WeatherCardFragment()
+        fun newInstance(bundle: Bundle): WeatherCardFragment{
+            val fragment = WeatherCardFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 }
