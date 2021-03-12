@@ -160,7 +160,7 @@ class WeatherCardFragment : Fragment() {
     companion object {
         const val BUNDLE_EXTRA = "weather data"
 
-        @JvmStatic
+
         fun newInstance(bundle: Bundle): WeatherCardFragment{
             val fragment = WeatherCardFragment()
             fragment.arguments = bundle

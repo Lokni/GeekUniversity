@@ -75,7 +75,7 @@ class CityListFragment : Fragment() {
 
     companion object {
 
-        @JvmStatic
+
         fun newInstance() {
 
         }
