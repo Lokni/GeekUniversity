@@ -14,4 +14,14 @@ fun getDefaultCity(): City {
     return City("Mountain View")
 }
 
+fun getDefaultList(): List<Weather>{
+    return listOf(
+        Weather(City("Mountain View"), 23, 25),
+        Weather(City("Cupertino"), 26, 27),
+        Weather(City("Tokyo"), 26, 27),
+        Weather(City("Moscow"), 26, 27),
+        Weather(City("Beijing"), 26, 27),
+    )
+}
+
 
