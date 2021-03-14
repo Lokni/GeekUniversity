@@ -3,12 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.weathercard.WeatherCardFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/main_view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/city_name_margin_top"
+            android:textSize="@dimen/city_name_text_size"
+            android:textStyle="bold"
+            tools:text="@string/mountain_view"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/current_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/city_name"
+            android:textSize="@dimen/temperature_value_text_size"
+            android:textStyle="bold"
+            tools:text="@string/current_temperature"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weather_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_temperature"
+            android:textSize="@dimen/conditions_text_size"
+            android:textStyle="italic"
+            tools:text="@string/weather_conditions"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/feels_like_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/city_name"
+            app:layout_constraintTop_toBottomOf="@id/weather_conditions"
+            android:textSize="@dimen/feels_like_text_size"
+            android:textStyle="italic"
+            tools:text="Feels like:"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/feels_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/feels_like_label"
+            app:layout_constraintTop_toBottomOf="@id/weather_conditions"
+            android:textSize="@dimen/feels_like_text_size"
+            android:textStyle="bold"
+            tools:text="@string/current_temperature"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

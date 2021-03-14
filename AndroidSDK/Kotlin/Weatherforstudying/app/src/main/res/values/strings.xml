@@ -3,4 +3,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="mountain_view">Mountain View</string>
+    <string name="current_temperature">%d°</string>
+    <string name="weather_conditions">Clear</string>
 </resources>
