@@ -1,10 +1,12 @@
 package ru.dmkalvan.weatherforstudying.ui.weathercard
 
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
 import ru.dmkalvan.weatherforstudying.R
 import ru.dmkalvan.weatherforstudying.data.Weather
 import ru.dmkalvan.weatherforstudying.data.WeatherDTO
@@ -29,16 +31,48 @@ class WeatherCardFragment : Fragment() {
         }
 
     private fun displayWeather(weatherDTO: WeatherDTO) {
-        TODO("Not yet implemented")
+        with(binding) {
+            mainView.visibility = View.VISIBLE
+            loadingLayout.visibility = View.GONE
+
+            val city = weatherBundle.city
+            cityName.text = city.city
+            weatherConditions.text = weatherDTO.fact?.conditions
+            currentTemperature.text = String.format(
+                getString(R.string.current_temperature),
+                weatherDTO.fact?.temperature.toString()
+            )
+            feelsLike.text = String.format(
+                getString(R.string.current_temperature),
+                weatherDTO.fact?.feelsLike.toString()
+            )
+        }
     }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weather_card, container, false)
+    ): View {
+        _binding = FragmentWeatherCardBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        weatherBundle = arguments?.getParcelable(BUNDLE_EXTRA) ?: Weather()
+
+        binding.mainView.visibility = View.GONE
+        binding.loadingLayout.visibility = View.VISIBLE
+
+        val loader = WeatherLoader(onLoadListener, weatherBundle.city.city)
+        loader.loadWeather()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     companion object {

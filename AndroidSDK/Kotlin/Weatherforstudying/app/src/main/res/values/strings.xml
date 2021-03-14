@@ -5,4 +5,6 @@
     <string name="mountain_view">Mountain View</string>
     <string name="current_temperature">%d°</string>
     <string name="weather_conditions">Clear</string>
+    <string name="error">Error</string>
+    <string name="reload">Reloading</string>
 </resources>
