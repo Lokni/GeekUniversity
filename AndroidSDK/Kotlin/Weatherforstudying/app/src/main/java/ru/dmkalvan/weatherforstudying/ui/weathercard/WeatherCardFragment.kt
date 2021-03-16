@@ -15,6 +15,7 @@ import ru.dmkalvan.weatherforstudying.data.FactDTO
 import ru.dmkalvan.weatherforstudying.data.Weather
 import ru.dmkalvan.weatherforstudying.data.WeatherDTO
 import ru.dmkalvan.weatherforstudying.databinding.FragmentWeatherCardBinding
+
 const val DETAILS_INTENT_FILTER = "DETAILS INTENT FILTER"
 const val DETAILS_LOAD_RESULT_EXTRA = "LOAD RESULT"
 const val DETAILS_INTENT_EMPTY_EXTRA = "INTENT IS EMPTY"
@@ -87,8 +88,10 @@ class WeatherCardFragment : Fragment() {
         } else {
             val city = weatherBundle.city
             binding.cityName.text = city.city
-            binding.currentTemperature.text = String.format(getString(R.string.current_temperature), temp)
-            binding.feelsLike.text = String.format(getString(R.string.current_temperature), feelsLike)
+            binding.currentTemperature.text =
+                String.format(getString(R.string.current_temperature), temp)
+            binding.feelsLike.text =
+                String.format(getString(R.string.current_temperature), feelsLike)
             binding.weatherConditions.text = condition
         }
     }
