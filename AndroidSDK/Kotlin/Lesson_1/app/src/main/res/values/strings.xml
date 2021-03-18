@@ -63,5 +63,6 @@
     <string name="reload">Reload</string>
     <string name="now">Now</string>
     <string name="weather_icon" translatable="false">weather icon</string>
+    <string name="default_city">Mountain View</string>
 
 </resources>

@@ -1,10 +1,11 @@
 package ru.dmkalvan.weatherapp.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DefaultItemAnimator
@@ -12,8 +13,13 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import ru.dmkalvan.weatherapp.R
+import ru.dmkalvan.weatherapp.data.DailyForecast
+import ru.dmkalvan.weatherapp.data.HourlyForecast
 import ru.dmkalvan.weatherapp.data.Weather
+import ru.dmkalvan.weatherapp.data.getDefaultCity
 import ru.dmkalvan.weatherapp.databinding.FragmentWeatherCardBinding
+import ru.dmkalvan.weatherapp.ui.adapters.DailyListAdapter
+import ru.dmkalvan.weatherapp.ui.adapters.HourlyListAdapter
 
 class WeatherCardFragment : Fragment() {
 
@@ -40,17 +46,13 @@ class WeatherCardFragment : Fragment() {
     private fun renderData(appState: AppState) {
         when (appState) {
             is AppState.Success -> {
-                val weatherData = appState.weatherData
-                binding.loadingLayout.visibility = View.GONE
-                setData(weatherData)
-                initHourlyList()
-                initDailyList()
+                setData(appState.weatherData)
+                initHourlyList(appState.hourlyWeatherData)
+                initDailyList(appState.dailyWeatherData)
             }
-            is AppState.Loading -> {
-                binding.loadingLayout.visibility = View.VISIBLE
-            }
+            is AppState.Loading -> Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT)
             is AppState.Error -> {
-                binding.loadingLayout.visibility = View.GONE
+
                 Snackbar
                         .make(binding.weatherCardList, getString(R.string.error), Snackbar.LENGTH_INDEFINITE)
                         .setAction(getString(R.string.reload)) { viewModel.getWeatherFromLocalSource() }
@@ -81,12 +83,14 @@ class WeatherCardFragment : Fragment() {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    fun initHourlyList() {
+    fun initHourlyList(data: List<HourlyForecast>) {
         binding.hourlyWeatherList.setHasFixedSize(true)
         val hourlyLayoutManager = LinearLayoutManager(context)
+        hourlyLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
         binding.hourlyWeatherList.layoutManager = hourlyLayoutManager
         hourlyAdapter = HourlyListAdapter(this)
         binding.hourlyWeatherList.adapter = hourlyAdapter
+        hourlyAdapter.setWeather(data)
 
         // Set separation line
         val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL)
@@ -102,12 +106,13 @@ class WeatherCardFragment : Fragment() {
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    fun initDailyList() {
+    fun initDailyList(data: List<DailyForecast>) {
         binding.weekDays.setHasFixedSize(true)
         val dailyLayoutManager = LinearLayoutManager(context)
         binding.weekDays.layoutManager = dailyLayoutManager
         dailyAdapter = DailyListAdapter(this)
         binding.weekDays.adapter = dailyAdapter
+        dailyAdapter.setWeather(data)
 
         // Set separation line
         val itemDecoration = DividerItemDecoration(context, LinearLayoutManager.VERTICAL)
@@ -126,8 +131,40 @@ class WeatherCardFragment : Fragment() {
         _binding = null
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return onItemSelected(item.itemId) || super.onOptionsItemSelected(item)
+    }
+
+    private fun onItemSelected(itemId: Int): Boolean {
+        return when (itemId) {
+            R.id.to_web -> {
+                val url = String.format("https://yandex.eu/weather/%s", getDefaultCity().city)
+                val webpage: Uri = Uri.parse(url)
+                val intent = Intent(Intent.ACTION_VIEW, webpage)
+                startActivity(intent)
+                true
+            }
+            R.id.to_city_list -> {
+
+                true
+            }
+
+            else -> return false
+        }
+    }
+
     companion object {
-        @JvmStatic
-        fun newInstance() = WeatherCardFragment()
+        const val BUNDLE_EXTRA = "weather data"
+
+
+        fun newInstance(bundle: Bundle): WeatherCardFragment{
+            val fragment = WeatherCardFragment()
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 }
