@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import ru.dmkalvan.weatherforstudying.R
-import ru.dmkalvan.weatherforstudying.data.Weather
+import ru.dmkalvan.weatherforstudying.model.Weather
 import ru.dmkalvan.weatherforstudying.databinding.FragmentCityListBinding
 import ru.dmkalvan.weatherforstudying.ui.weathercard.WeatherCardFragment
-import ru.dmkalvan.weatherforstudying.viewmodel.AppState
+import ru.dmkalvan.weatherforstudying.app.AppState
 import ru.dmkalvan.weatherforstudying.viewmodel.MainViewModel
 
 class CityListFragment : Fragment() {

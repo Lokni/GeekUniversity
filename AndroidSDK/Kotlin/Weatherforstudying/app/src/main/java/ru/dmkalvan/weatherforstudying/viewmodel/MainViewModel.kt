@@ -2,8 +2,7 @@ package ru.dmkalvan.weatherforstudying.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ru.dmkalvan.weatherforstudying.data.Repository
-import ru.dmkalvan.weatherforstudying.data.RepositoryImpl
+import ru.dmkalvan.weatherforstudying.app.AppState
 import java.lang.Thread.sleep
 
 class MainViewModel(

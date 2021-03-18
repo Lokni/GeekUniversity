@@ -1,4 +1,4 @@
-package ru.dmkalvan.weatherforstudying.data
+package ru.dmkalvan.weatherforstudying.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -7,7 +7,9 @@ import kotlinx.android.parcel.Parcelize
 data class Weather(
     val city: City = getDefaultCity(),
     val temperature: Int = 23,
-    val feelsLike: Int = 25
+    val feelsLike: Int = 25,
+    val conditions: String = "Sunny",
+val icon: String = "01d"
 ) : Parcelable
 
 fun getDefaultCity(): City {

@@ -11,9 +11,9 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import ru.dmkalvan.weatherforstudying.R
-import ru.dmkalvan.weatherforstudying.data.FactDTO
-import ru.dmkalvan.weatherforstudying.data.Weather
-import ru.dmkalvan.weatherforstudying.data.WeatherDTO
+import ru.dmkalvan.weatherforstudying.model.FactDTO
+import ru.dmkalvan.weatherforstudying.model.Weather
+import ru.dmkalvan.weatherforstudying.model.WeatherDTO
 import ru.dmkalvan.weatherforstudying.databinding.FragmentWeatherCardBinding
 
 const val DETAILS_INTENT_FILTER = "DETAILS INTENT FILTER"

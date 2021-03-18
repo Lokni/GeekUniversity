@@ -7,7 +7,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.JobIntentService
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.gson.Gson
-import ru.dmkalvan.weatherforstudying.data.WeatherDTO
+import ru.dmkalvan.weatherforstudying.model.WeatherDTO
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.MalformedURLException

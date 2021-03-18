@@ -1,6 +1,6 @@
-package ru.dmkalvan.weatherforstudying.viewmodel
+package ru.dmkalvan.weatherforstudying.app
 
-import ru.dmkalvan.weatherforstudying.data.Weather
+import ru.dmkalvan.weatherforstudying.model.Weather
 
 sealed class AppState {
     data class Success(val weatherData: List<Weather>) : AppState()

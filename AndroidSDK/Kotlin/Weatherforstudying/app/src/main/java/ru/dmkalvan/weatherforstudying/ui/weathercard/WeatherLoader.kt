@@ -6,7 +6,7 @@ import android.os.Looper
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.google.gson.Gson
-import ru.dmkalvan.weatherforstudying.data.WeatherDTO
+import ru.dmkalvan.weatherforstudying.model.WeatherDTO
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.MalformedURLException
