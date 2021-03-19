@@ -1,6 +1,9 @@
 package ru.dmkalvan.weatherforstudying.app
 
 import android.app.Application
+import androidx.room.Room
+import ru.dmkalvan.weatherforstudying.room.HistoryDao
+import ru.dmkalvan.weatherforstudying.room.HistoryDataBase
 
 class App : Application() {
 
