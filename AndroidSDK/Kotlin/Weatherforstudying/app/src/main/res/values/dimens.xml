@@ -13,4 +13,7 @@
     <dimen name="recycler_item_line_margin_end">20dp</dimen>
     <dimen name="city_name_text_size">35sp</dimen>
     <dimen name="conditions_text_size">14sp</dimen>
+    <dimen name="weather_icon_width">50dp</dimen>
+    <dimen name="weather_icon_height">50dp</dimen>
+    <dimen name="hairline">1dp</dimen>
 </resources>
