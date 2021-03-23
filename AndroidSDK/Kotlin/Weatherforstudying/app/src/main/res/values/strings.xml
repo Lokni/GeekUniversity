@@ -7,4 +7,6 @@
     <string name="weather_conditions">Clear</string>
     <string name="error">Error</string>
     <string name="reload">Reloading</string>
+    <string name="content_provider">Content provider</string>
+    <string name="menu_title_history">History</string>
 </resources>

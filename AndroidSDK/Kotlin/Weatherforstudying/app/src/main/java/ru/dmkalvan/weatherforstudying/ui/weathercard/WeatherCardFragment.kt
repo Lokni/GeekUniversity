@@ -20,7 +20,6 @@ import ru.dmkalvan.weatherforstudying.viewmodel.DetailsViewModel
 class WeatherCardFragment : Fragment() {
 
 
-
     private var _binding: FragmentWeatherCardBinding? = null
     private val binding get() = _binding!!
     private lateinit var weatherBundle: Weather
@@ -38,7 +37,7 @@ class WeatherCardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         weatherBundle = arguments?.getParcelable(BUNDLE_EXTRA) ?: Weather()
-        viewModel.detailLiveData.observe(viewLifecycleOwner, { renderData(it) })
+        viewModel.detailsLiveData.observe(viewLifecycleOwner, { renderData(it) })
         viewModel.getWeatherFromRemoteSource(weatherBundle.city.city)
     }
 
@@ -79,8 +78,10 @@ class WeatherCardFragment : Fragment() {
                 Picasso.get()
                     .load("https://openweathermap.org/img/wn/${it}@2x.png")
                     .into(weatherIcon)
-                currentTemperature.text = String.format(getString(R.id.current_temperature), weather.temperature)
-                feelsLike.text = String.format(getString(R.id.current_temperature), weather.feelsLike)
+                currentTemperature.text =
+                    String.format(getString(R.id.current_temperature), weather.temperature)
+                feelsLike.text =
+                    String.format(getString(R.id.current_temperature), weather.feelsLike)
                 weatherConditions.text = weather.conditions
             }
 

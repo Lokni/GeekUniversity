@@ -1,5 +1,6 @@
 package ru.dmkalvan.weatherforstudying.ui.citylist
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import ru.dmkalvan.weatherforstudying.R
-import ru.dmkalvan.weatherforstudying.model.Weather
-import ru.dmkalvan.weatherforstudying.databinding.FragmentCityListBinding
-import ru.dmkalvan.weatherforstudying.ui.weathercard.WeatherCardFragment
 import ru.dmkalvan.weatherforstudying.app.AppState
+import ru.dmkalvan.weatherforstudying.databinding.FragmentCityListBinding
+import ru.dmkalvan.weatherforstudying.model.Weather
+import ru.dmkalvan.weatherforstudying.ui.weathercard.WeatherCardFragment
 import ru.dmkalvan.weatherforstudying.viewmodel.MainViewModel
+
+private const val IS_WORLD_KEY = "LIST_OF_TOWNS_KEY"
 
 class CityListFragment : Fragment() {
 
@@ -48,6 +51,15 @@ class CityListFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, { renderData(it) })
         viewModel.getWeatherFromLocalSource()
+        showListOfTowns()
+    }
+
+    private fun showListOfTowns() {
+        activity?.let {
+            if (it.getPreferences(Context.MODE_PRIVATE)
+                    .getBoolean(IS_WORLD_KEY, false)
+            ) viewModel.getWeatherFromLocalSource()
+        }
     }
 
     override fun onDestroy() {
