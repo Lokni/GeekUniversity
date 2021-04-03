@@ -9,4 +9,7 @@
     <string name="reload">Reloading</string>
     <string name="content_provider">Content provider</string>
     <string name="menu_title_history">History</string>
+    <string name="default_address">1600 Amphitheatre Parkway, Mountain View</string>
+    <string name="button_search_map">search</string>
+    <string name="marker_start">Start</string>
 </resources>

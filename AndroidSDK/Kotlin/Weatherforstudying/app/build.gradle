@@ -46,11 +46,11 @@ android {
 dependencies {
     // location play services
     implementation 'com.google.android.gms:play-services-location:18.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
     //Room
     implementation 'androidx.room:room-runtime:2.2.6'
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
     kapt 'androidx.room:room-compiler:2.2.6'
-    //GlideToVectorYou
-    implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
     //Retrofit
