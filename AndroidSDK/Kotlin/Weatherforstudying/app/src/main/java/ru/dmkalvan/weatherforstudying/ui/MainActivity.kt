@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import ru.dmkalvan.weatherforstudying.R
 import ru.dmkalvan.weatherforstudying.databinding.ActivityMainBinding
 import ru.dmkalvan.weatherforstudying.ui.citylist.CityListFragment
+import ru.dmkalvan.weatherforstudying.ui.googlemaps.GoogleMapsFragment
 import ru.dmkalvan.weatherforstudying.ui.history.HistoryFragment
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, CityListFragment.newInstance())
                 .commitAllowingStateLoss()
@@ -43,6 +44,15 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.apply {
                     beginTransaction()
                         .add(R.id.container, HistoryFragment.newInstance())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                true
+            }
+            R.id.menu_google_maps -> {
+                supportFragmentManager.apply {
+                    beginTransaction()
+                        .add(R.id.container, GoogleMapsFragment.newInstance())
                         .addToBackStack("")
                         .commitAllowingStateLoss()
                 }

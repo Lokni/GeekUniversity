@@ -29,7 +29,7 @@ class GoogleMapsFragment : Fragment() {
     private val markers: ArrayList<Marker> = arrayListOf()
     private val callback = OnMapReadyCallback { googleMap ->
         map = googleMap
-        val initialPlace = LatLng(52.52000659999999, 13.404953999999975)
+        val initialPlace = LatLng(37.42233657836914, -122.08436584472656)
         googleMap.addMarker(
             MarkerOptions().position(initialPlace).title(getString(R.string.marker_start))
         )
