@@ -1,4 +1,4 @@
-package ru.dmkalvan.weatherforstudying.data
+package ru.dmkalvan.weatherforstudying.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

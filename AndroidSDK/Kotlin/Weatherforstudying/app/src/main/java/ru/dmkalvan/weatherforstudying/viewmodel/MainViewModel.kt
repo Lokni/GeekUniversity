@@ -2,13 +2,14 @@ package ru.dmkalvan.weatherforstudying.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ru.dmkalvan.weatherforstudying.data.Repository
-import ru.dmkalvan.weatherforstudying.data.RepositoryImpl
+import ru.dmkalvan.weatherforstudying.app.AppState
+import ru.dmkalvan.weatherforstudying.repository.MainRepository
+import ru.dmkalvan.weatherforstudying.repository.MainRepositoryImpl
 import java.lang.Thread.sleep
 
 class MainViewModel(
     private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData(),
-    private val repositoryImpl: Repository = RepositoryImpl()
+    private val mainRepositoryImpl: MainRepository = MainRepositoryImpl()
 ) : ViewModel() {
 
     fun getLiveData() = liveDataToObserve
@@ -19,7 +20,7 @@ class MainViewModel(
         liveDataToObserve.value = AppState.Loading
         Thread {
             sleep(500)
-            liveDataToObserve.postValue(AppState.Success(repositoryImpl.getWeatherFromLocal()))
+            liveDataToObserve.postValue(AppState.Success(mainRepositoryImpl.getWeatherFromLocalStorage()))
         }.start()
 
     }

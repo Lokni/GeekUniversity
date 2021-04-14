@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.city_list_item.view.*
 import ru.dmkalvan.weatherforstudying.R
-import ru.dmkalvan.weatherforstudying.data.Weather
+import ru.dmkalvan.weatherforstudying.model.Weather
 import ru.dmkalvan.weatherforstudying.ui.citylist.CityListFragment.OnItemViewClickListener
 
 class CityListAdapter(private var onItemViewClickListener: OnItemViewClickListener?):

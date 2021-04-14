@@ -1,4 +1,4 @@
-package ru.dmkalvan.weatherforstudying.data
+package ru.dmkalvan.weatherforstudying.model
 
 data class WeatherDTO(
     val fact: FactDTO?
@@ -7,5 +7,6 @@ data class WeatherDTO(
 data class FactDTO(
     val temperature: Int?,
     val feelsLike: Int?,
-    val conditions: String?
+    val conditions: String?,
+    val icon: String?
 )
