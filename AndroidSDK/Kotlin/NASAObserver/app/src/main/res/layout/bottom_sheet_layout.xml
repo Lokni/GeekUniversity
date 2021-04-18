@@ -5,7 +5,7 @@
     android:id="@+id/bottom_sheet_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@android:color/holo_blue_light"
     android:visibility="gone"
     app:behavior_hideable="true"
     app:behavior_peekHeight="@dimen/peek_height"
