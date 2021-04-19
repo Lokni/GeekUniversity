@@ -15,8 +15,10 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.fragment_picture_of_the_day.*
 import kotlinx.android.synthetic.main.loading_layout.*
 import ru.dmkalvan.nasaobserver.R
+import ru.dmkalvan.nasaobserver.data.PictureOfTheDayData
 import ru.dmkalvan.nasaobserver.ui.MainActivity
 import ru.dmkalvan.nasaobserver.ui.settings.SettingsFragment
+import ru.dmkalvan.nasaobserver.viewmodel.PictureOfTheDayViewModel
 
 
 class PictureOfTheDayFragment : Fragment() {

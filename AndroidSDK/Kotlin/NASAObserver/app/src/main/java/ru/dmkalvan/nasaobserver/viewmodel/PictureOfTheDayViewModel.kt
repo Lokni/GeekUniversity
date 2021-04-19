@@ -1,4 +1,4 @@
-package ru.dmkalvan.nasaobserver.ui.picture
+package ru.dmkalvan.nasaobserver.viewmodel
 
 
 import androidx.lifecycle.LiveData
@@ -8,6 +8,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import ru.dmkalvan.nasaobserver.BuildConfig
+import ru.dmkalvan.nasaobserver.data.PODRetrofitImpl
+import ru.dmkalvan.nasaobserver.data.PODServerResponseData
+import ru.dmkalvan.nasaobserver.data.PictureOfTheDayData
 
 
 class PictureOfTheDayViewModel(

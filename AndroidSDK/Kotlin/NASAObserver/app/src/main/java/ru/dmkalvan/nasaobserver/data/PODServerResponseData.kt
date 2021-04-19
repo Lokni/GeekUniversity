@@ -1,4 +1,4 @@
-package ru.dmkalvan.nasaobserver.ui.picture
+package ru.dmkalvan.nasaobserver.data
 
 import com.google.gson.annotations.SerializedName
 
