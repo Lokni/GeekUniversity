@@ -13,6 +13,7 @@ import coil.api.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.fragment_picture_of_the_day.*
+import kotlinx.android.synthetic.main.loading_layout.*
 import ru.dmkalvan.nasaobserver.R
 import ru.dmkalvan.nasaobserver.ui.MainActivity
 import ru.dmkalvan.nasaobserver.ui.settings.SettingsFragment
@@ -81,6 +82,9 @@ class PictureOfTheDayFragment : Fragment() {
     private fun renderData(data: PictureOfTheDayData) {
         when (data) {
             is PictureOfTheDayData.Success -> {
+                main.visibility = View.VISIBLE
+                loadingLayout.visibility = View.GONE
+
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
@@ -91,11 +95,13 @@ class PictureOfTheDayFragment : Fragment() {
                         error(R.drawable.ic_load_error_vector)
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
+
                 }
             }
 
             is PictureOfTheDayData.Loading -> {
-                // show loading
+                main.visibility = View.GONE
+                loadingLayout.visibility = View.VISIBLE
             }
 
             is PictureOfTheDayData.Error -> {
@@ -128,7 +134,7 @@ class PictureOfTheDayFragment : Fragment() {
 
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_DRAGGING
     }
 
     private fun Fragment.toast(string: String?) {
