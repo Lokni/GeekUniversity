@@ -16,9 +16,9 @@ import ru.dmkalvan.nasaobserver.data.PictureOfTheDayData
 class PictureOfTheDayViewModel(
     private val liveDataForViewToObserve: MutableLiveData<PictureOfTheDayData> = MutableLiveData(),
     private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()
-): ViewModel() {
+) : ViewModel() {
 
-    fun getData(): LiveData<PictureOfTheDayData>{
+    fun getData(): LiveData<PictureOfTheDayData> {
         sendServerRequest()
         return liveDataForViewToObserve
     }
@@ -27,23 +27,26 @@ class PictureOfTheDayViewModel(
         liveDataForViewToObserve.value = PictureOfTheDayData.Loading
 
         val apiKey: String = BuildConfig.NASA_API_KEY
-        if (apiKey.isBlank()){
+        if (apiKey.isBlank()) {
             PictureOfTheDayData.Error(Throwable("You need api key"))
         } else {
             retrofitImpl.getRetrofitImpl().getPictureOfTheDay(apiKey).enqueue(object :
-                Callback<PODServerResponseData>{
+                Callback<PODServerResponseData> {
                 override fun onResponse(
                     call: Call<PODServerResponseData>,
                     response: Response<PODServerResponseData>
                 ) {
-                    if (response.isSuccessful && response.body() != null){
-                        liveDataForViewToObserve.value = PictureOfTheDayData.Success(response.body()!!)
+                    if (response.isSuccessful && response.body() != null) {
+                        liveDataForViewToObserve.value =
+                            PictureOfTheDayData.Success(response.body()!!)
                     } else {
                         val message = response.message()
-                        if (message.isNullOrEmpty()){
-                            liveDataForViewToObserve.value = PictureOfTheDayData.Error(Throwable("Unidentified error"))
+                        if (message.isNullOrEmpty()) {
+                            liveDataForViewToObserve.value =
+                                PictureOfTheDayData.Error(Throwable("Unidentified error"))
                         } else {
-                            liveDataForViewToObserve.value = PictureOfTheDayData.Error(Throwable(message))
+                            liveDataForViewToObserve.value =
+                                PictureOfTheDayData.Error(Throwable(message))
                         }
                     }
                 }
@@ -51,7 +54,7 @@ class PictureOfTheDayViewModel(
                 override fun onFailure(call: Call<PODServerResponseData>, t: Throwable) {
                     liveDataForViewToObserve.value = PictureOfTheDayData.Error(t)
                 }
-                })
+            })
         }
 
 
