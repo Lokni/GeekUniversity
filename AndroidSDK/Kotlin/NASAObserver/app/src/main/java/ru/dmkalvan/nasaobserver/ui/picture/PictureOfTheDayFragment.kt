@@ -12,11 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.bottom_sheet_layout.*
 import kotlinx.android.synthetic.main.fragment_picture_of_the_day.*
 import kotlinx.android.synthetic.main.loading_layout.*
 import ru.dmkalvan.nasaobserver.R
 import ru.dmkalvan.nasaobserver.data.PictureOfTheDayData
 import ru.dmkalvan.nasaobserver.ui.MainActivity
+import ru.dmkalvan.nasaobserver.ui.bottomsheets.BottomNavigationDrawlerFragment
 import ru.dmkalvan.nasaobserver.ui.settings.SettingsFragment
 import ru.dmkalvan.nasaobserver.viewmodel.PictureOfTheDayViewModel
 
@@ -88,7 +90,7 @@ class PictureOfTheDayFragment : Fragment() {
                 loadingLayout.visibility = View.GONE
 
                 val serverResponseData = data.serverResponseData
-                val url = serverResponseData.url
+                val url = serverResponseData.hdurl
                 if (url.isNullOrEmpty()) {
                     toast("Link is empty")
                 } else {
@@ -97,6 +99,10 @@ class PictureOfTheDayFragment : Fragment() {
                         error(R.drawable.ic_load_error_vector)
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
+                    setDescriptionInBottomSheet(
+                        serverResponseData.title.toString(),
+                        serverResponseData.explanation.toString()
+                    )
 
                 }
             }
@@ -136,7 +142,12 @@ class PictureOfTheDayFragment : Fragment() {
 
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_DRAGGING
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+    }
+
+    private fun setDescriptionInBottomSheet(header: String, body: String) {
+        bottom_sheet_description_header.text = header
+        bottom_sheet_description.text = body
     }
 
     private fun Fragment.toast(string: String?) {
