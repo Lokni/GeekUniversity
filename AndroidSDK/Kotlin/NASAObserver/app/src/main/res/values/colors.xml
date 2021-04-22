@@ -26,4 +26,14 @@
     <color name="red_light">#ff616f</color>
     <color name="red_dark">#c4001d</color>
     <color name="red_text_color">#000000</color>
+<!--  Moon theme colors Primary  -->
+    <color name="blue_grey">#eceff1</color>
+    <color name="blue_gray_light">#ffffff</color>
+    <color name="blue_gray_dark">#babdbe</color>
+    <color name="blue_gray_text_color">#000000</color>
+<!--  Moon theme colors secondary  -->
+    <color name="blue">#1565c0</color>
+    <color name="blue_light">#5e92f3</color>
+    <color name="blue_dark">#003c8f</color>
+    <color name="blue_text_color">#ffffff</color>
 </resources>

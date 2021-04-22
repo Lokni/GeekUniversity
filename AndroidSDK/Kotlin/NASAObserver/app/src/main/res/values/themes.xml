@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NASAObserver" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.NASAObserver" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -26,7 +26,7 @@
         <item name="cardElevation">8dp</item>
     </style>
 
-    <style name="IndigoTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.NASAObserver.IndigoTheme">
 <!--    Primary bran color    -->
         <item name="colorPrimary">@color/indigo</item>
         <item name="colorPrimaryVariant">@color/indigo_dark</item>
@@ -39,5 +39,19 @@
 <!--    Connect/Disconnect    -->
         <item name="text_color_connected">@color/green</item>
         <item name="text_color_disconnected">@color/light_grey</item>
+    </style>
+
+    <style name="Theme.NASAObserver.MoonTheme">
+        <item name="colorPrimary">@color/blue_grey</item>
+        <item name="colorPrimaryVariant">@color/blue_gray_dark</item>
+        <item name="colorAccent">@color/blue_gray_light</item>
+        <item name="colorOnPrimary">@color/blue_gray_text_color</item>
+        <!--    Secondary brand color    -->
+        <item name="colorSecondary">@color/blue</item>
+        <item name="colorSecondaryVariant">@color/blue_dark</item>
+        <item name="colorOnSecondary">@color/blue_text_color</item>
+        <!--    Connect/Disconnect    -->
+        <item name="text_color_connected">@color/green</item>
+        <item name="text_color_disconnected">@color/black</item>
     </style>
 </resources>
