@@ -25,4 +25,19 @@
     <style name="AppCard" parent="Widget.MaterialComponents.CardView">
         <item name="cardElevation">8dp</item>
     </style>
+
+    <style name="IndigoTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+<!--    Primary bran color    -->
+        <item name="colorPrimary">@color/indigo</item>
+        <item name="colorPrimaryVariant">@color/indigo_dark</item>
+        <item name="colorAccent">@color/indigo_light</item>
+        <item name="colorOnPrimary">@color/indigo_text_color</item>
+<!--    Secondary brand color    -->
+        <item name="colorSecondary">@color/red</item>
+        <item name="colorSecondaryVariant">@color/red_dark</item>
+        <item name="colorOnSecondary">@color/red_text_color</item>
+<!--    Connect/Disconnect    -->
+        <item name="text_color_connected">@color/green</item>
+        <item name="text_color_disconnected">@color/light_grey</item>
+    </style>
 </resources>

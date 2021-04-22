@@ -14,4 +14,16 @@
     <color name="color_gray">#66000000</color>
     <color name="background">#FAFAFA</color>
     <color name="loading_background">#DFDFDF</color>
+    <color name="green">#00e676</color>
+    <color name="light_grey">#babdbe</color>
+    <!--  Indigo theme colors Primary -->
+    <color name="indigo">#1a237e</color>
+    <color name="indigo_light">#534bae</color>
+    <color name="indigo_dark">#000051</color>
+    <color name="indigo_text_color">#ffffff</color>
+    <!--  Indigo theme colors Secondary  -->
+    <color name="red">#ff1744</color>
+    <color name="red_light">#ff616f</color>
+    <color name="red_dark">#c4001d</color>
+    <color name="red_text_color">#000000</color>
 </resources>
